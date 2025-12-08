@@ -2,7 +2,7 @@ import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import React from 'react';
 import './paragraph.css';
 
-import { motion, transformValue, useScroll, useSpring, useVelocity } from 'motion/react';
+import { motion, transformValue, useScroll } from 'motion/react';
 
 export default function Paragraph({ title, children }: { title?: string } & React.PropsWithChildren): React.JSX.Element {
     const paragraphRef = React.useRef(null) as React.RefObject<HTMLDivElement>;

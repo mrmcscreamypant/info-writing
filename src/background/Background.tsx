@@ -1,7 +1,10 @@
 import React from "react";
+import Engine from "./Engine";
+
+import './background.css';
 
 export default function Background(): React.JSX.Element {
-    return <canvas id="background">
+    React.useEffect(() => { new Engine("background"); });
 
-    </canvas>;
+    return <canvas id="background"></canvas>;
 }

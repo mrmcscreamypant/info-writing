@@ -1,5 +1,3 @@
-.page {
+.page::after {
     position: relative;
-
-    overflow-y: scroll;
 }
