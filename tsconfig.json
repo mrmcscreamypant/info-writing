@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "outDir": "../build",
+        "rootDir": ".",
+        "target": "es2024",
+        "module": "preserve",
+        "moduleResolution": "bundler",
+        "strict": true,
+        "allowJs": true,
+        "removeComments": true,
+        "noImplicitOverride": true,
+        "strictNullChecks": false,
+        "forceConsistentCasingInFileNames": true,
+        "types": [
+            "vite/client"
+        ],
+        "lib": [
+            "ES2024",
+            "DOM",
+        ]
+    },
+    "exclude": [
+        "node_modules",
+        "build"
+    ],
+    "include": [
+        "."
+    ]
+}
