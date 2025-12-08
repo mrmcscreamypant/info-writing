@@ -1,9 +1,11 @@
 import React from 'react';
 import Page from '../core/Page';
-import CodeSample from '../core/CodeSample';
+import CodeSample, { CodeLanguage } from '../core/CodeSample';
+
+import sample from '../core/CodeSample?raw';
 
 export default function Index(): React.JSX.Element {
     return <Page>
-        <CodeSample content='print("Hello world")'></CodeSample>
+        <CodeSample content={sample} language={CodeLanguage.TS}></CodeSample>
     </Page>;
 }

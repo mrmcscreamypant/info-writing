@@ -1,10 +1,8 @@
 import React from 'react';
 import './app.css';
 import AppRoutes from '../AppRoutes';
-import { Theme } from '@radix-ui/themes';
+import "@radix-ui/themes/styles.css";
 
 export function App(): React.JSX.Element {
-    return <Theme>
-        <AppRoutes />
-    </Theme>;
+    return <AppRoutes />;
 }
