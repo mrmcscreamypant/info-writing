@@ -8,12 +8,14 @@ export default function Paragraph({ title, children }: { title?: string } & Reac
     const paragraphRef = React.useRef(null) as React.RefObject<HTMLDivElement>;
     const { scrollYProgress } = useScroll({
         target: paragraphRef,
-        offset: ["end end", "start start"]
+        offset: ["start start", "end end"]
     });
 
+    const anim = transformValue(() => Math.sqrt(Math.sin(scrollYProgress.get() * Math.PI)));
+
     return <motion.div ref={paragraphRef} style={{
-        scaleX: transformValue(() => (Math.sin((scrollYProgress.get()) * Math.PI)+2) / 3),
-        scaleY: transformValue(() => (Math.sin((scrollYProgress.get()) * Math.PI)+2) / 3)
+        scaleY: anim,
+        opacity: anim
     }}>
         <Section>
             {title ? <Heading color="teal">{title}</Heading> : null}
