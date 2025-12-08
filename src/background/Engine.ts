@@ -23,7 +23,7 @@ export default class Engine {
 
         const cube = new THREE.Mesh(new THREE.SphereGeometry(1), new THREE.MeshNormalMaterial());
         this.scene.add(cube);
-        cube.position.z = 5;
+        cube.position.z = -5;
 
         window.onresize = (): void => this.handleResize();
 
