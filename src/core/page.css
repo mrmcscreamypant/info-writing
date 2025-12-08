@@ -1,6 +1,5 @@
 .page {
-    width: 100vw;
-    height: 100vh;
+    position: relative;
 
-    background-color: var(--accent-1);
+    overflow-y: scroll;
 }
