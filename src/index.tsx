@@ -1,9 +1,5 @@
-import React from 'react';
 import { createRoot } from 'react-dom/client';
-
-function App(): React.JSX.Element {
-    return <h1>Testing Testing 123</h1>;
-}
+import { App } from './core/App';
 
 const elem = document.getElementById("root");
 if (!elem) { throw new Error("Could not find root element!"); }
