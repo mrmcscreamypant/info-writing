@@ -1,7 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router';
-import { AppRoute } from '../AppRoutes';
+import Page from '../core/Page';
+import CodeSample from '../core/CodeSample';
 
 export default function Index(): React.JSX.Element {
-    return <NavLink to={AppRoute.ABOUT}>Hello World</NavLink>;
+    return <Page>
+        <CodeSample content='Hello world'></CodeSample>
+    </Page>;
 }
