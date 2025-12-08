@@ -12,12 +12,18 @@ export default class Engine {
         this.elem = document.getElementById(elemID) as HTMLCanvasElement;
 
         this.renderer = new THREE.WebGLRenderer({
-            canvas: this.elem
+            canvas: this.elem,
+            alpha: true,
+            premultipliedAlpha: false
         });
 
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera();
         this.scene.add(this.camera);
+
+        const cube = new THREE.Mesh(new THREE.SphereGeometry(1), new THREE.MeshNormalMaterial());
+        this.scene.add(cube);
+        cube.position.z = 5;
 
         window.onresize = (): void => this.handleResize();
 

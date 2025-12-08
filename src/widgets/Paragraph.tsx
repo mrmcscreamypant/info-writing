@@ -14,7 +14,7 @@ export default function Paragraph({ title, children }: { title?: string } & Reac
     const anim = transformValue(() => Math.sqrt(Math.sin(scrollYProgress.get() * Math.PI)));
 
     return <motion.div ref={paragraphRef} style={{
-        scaleY: anim,
+        transform: transformValue(() => `scale(1.0, ${anim.get()})`),
         opacity: anim
     }}>
         <Section>
