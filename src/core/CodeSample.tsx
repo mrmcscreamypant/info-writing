@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { editor } from 'monaco-editor';
 import { v4 } from 'uuid';
 import './code-sample.css';
+import { Box } from '@radix-ui/themes';
 
 export const enum CodeLanguage {
     JS = 'javascript',
@@ -16,11 +17,16 @@ export default function CodeSample({ content, language = CodeLanguage.PY }: { co
         const elem = document.getElementById(uuid);
         editor.create(elem, {
             value: content,
+            readOnly: true,
+            roundedSelection: true,
+            minimap: {
+                enabled: false
+            },
             automaticLayout: true,
             language: language,
             theme: "vs-dark"
         });
     });
 
-    return <div id={uuid} className='code-sample'></div>;
+    return <Box id={uuid} className='code-sample'></Box>;
 }

@@ -4,6 +4,6 @@ import CodeSample from '../core/CodeSample';
 
 export default function Index(): React.JSX.Element {
     return <Page>
-        <CodeSample content='Hello world'></CodeSample>
+        <CodeSample content='print("Hello world")'></CodeSample>
     </Page>;
 }
