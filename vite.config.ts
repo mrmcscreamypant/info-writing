@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: "info-writing"
+    base: "https://mrmcscreamypant.github.io/info-writing/"
 });
