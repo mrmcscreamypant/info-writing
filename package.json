@@ -1,0 +1,16 @@
+{
+  "name": "info-writing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite . --host",
+    "build": "vite build .",
+    "preview": "vite preview ."
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "vite": "^7.2.7"
+  }
+}
