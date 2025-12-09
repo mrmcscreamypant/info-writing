@@ -1,11 +1,11 @@
 import React from 'react';
 import Page from '../core/Page';
-import Paragraph from '../widgets/Paragraph';
+
+import document from './narrative.yaml?raw';
+import YAMLParser from './YAMLParser';
 
 export default function Narrative(): React.JSX.Element {
     return <Page>
-        <Paragraph>
-            In case you haven't noticed by now, this was not made purley in Google Sheets.
-        </Paragraph>
+        <YAMLParser markup={document} />
     </Page>;
 }

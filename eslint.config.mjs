@@ -17,7 +17,7 @@ export default defineConfig(
         rules: {
             semi: ["warn", "always"],
             "@typescript-eslint/explicit-function-return-type": "error",
-            "@typescript-eslint/no-unused-vars": "warn",
+            "@typescript-eslint/no-unused-vars": "off",
             "@typescript-eslint/no-unsafe-enum-comparison": "off",
             "@typescript-eslint/prefer-readonly": "warn",
             "@typescript-eslint/explicit-member-accessibility": "error",
