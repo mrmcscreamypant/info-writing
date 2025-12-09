@@ -1,6 +1,6 @@
 {
-    "short_name": "MDN",
-    "name": "MDN Web Docs",
+    "short_name": "info-writing",
+    "name": "Information Writing Stuff",
     "icons": [
         {
             "src": "./favicon.svg",
