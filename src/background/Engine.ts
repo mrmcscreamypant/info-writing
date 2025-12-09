@@ -1,11 +1,12 @@
 import * as THREE from 'three';
-import Cube from './Cube';
 
 import * as POST from 'postprocessing';
 import { MotionValue } from 'motion/react';
 import LightArray from './LightArray';
 import { Location } from 'react-router';
 import Context from './Context';
+import { ContextMappings } from './ContextMappings';
+import { AppRoute } from '../AppRoutes';
 
 export type EngineHooks = {
     scrollProgress: MotionValue<number>,
@@ -25,7 +26,7 @@ export default class Engine {
     private readonly camera: THREE.PerspectiveCamera;
     private readonly lightArray: LightArray;
 
-    private readonly context: Context;
+    private context: Context;
 
     public constructor(elemID: string, getHooks: () => EngineHooks) {
         this.elem = document.getElementById(elemID) as HTMLCanvasElement;
@@ -73,7 +74,9 @@ export default class Engine {
 
     private mainloop(): void {
         const delta = this.clock.getDelta();
-        this.context.tick(delta);
+        if (this.context) {
+            this.context.tick(delta);
+        }
         this.lightArray.tick(delta);
         this.composer.render(delta);
     }
@@ -86,6 +89,15 @@ export default class Engine {
     }
 
     public switchContext(location: Location): void {
-        console.log(location);
+        if (this.context) {
+            this.context.removeFromParent();
+        }
+        const contextConstructor = ContextMappings[location.pathname as AppRoute];
+        if (contextConstructor) {
+            this.context = new contextConstructor(this);
+            this.scene.add(this.context);
+            return;
+        }
+        this.context = null;
     }
 }

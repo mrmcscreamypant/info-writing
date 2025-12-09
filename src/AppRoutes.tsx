@@ -3,9 +3,9 @@ import { HashRouter, Location, Route, Routes, useLocation } from 'react-router';
 import Index from './pages';
 import Narrative from './pages/Narrative';
 
-export enum AppRoute {
+export const enum AppRoute {
     INDEX = "/",
-    NARRATIVE = "narrative",
+    NARRATIVE = "/narrative",
 }
 
 type SetCurrentPageProps = { setCurrentPage: (value: Location) => void };
