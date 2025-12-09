@@ -81,14 +81,14 @@ export default class Engine {
                 .multiplyScalar(delta)
         );
 
-        const oldRot = new THREE.Vector4().copy(this.camera.quaternion);
+        const oldRot = new THREE.Vector3().setFromEuler(this.camera.rotation);
         this.camera.lookAt(this.context ? this.context.position : new THREE.Vector3(0, 0, -1));
-        const rot = new THREE.Vector4().copy(this.camera.quaternion);
-        this.camera.quaternion.copy(
+        const rot = new THREE.Vector3().copy(this.camera.rotation);
+        this.camera.rotation.setFromVector3(
             rot.clone()
                 .sub(oldRot)
-                .multiplyScalar(delta)
-                .add(oldRot).normalize()
+                .multiplyScalar(5 * delta)
+                .add(oldRot)
         );
 
         this.composer.render(delta);
