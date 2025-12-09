@@ -3,6 +3,12 @@
     How did you guess?
 
 - content: |
-    This was instead made in react. 
+    This was instead made in react. This page is actually being served somewhere else.
+    React, for those who don't know, is (at some points, straight up witchcraft) a javascript
+    (I used typescript, for reasons explained elsewhere on the site) framework for committing
+    war crimes akin to the following:
   
 - fig: cursed
+
+- content: |
+    That is actual code being used in this project.

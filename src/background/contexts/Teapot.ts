@@ -10,7 +10,9 @@ class TeapotEntity extends Entity {
     public constructor(engine: Engine) {
         super(engine);
 
-        this.add(new THREE.Mesh(new TeapotGeometry(0.5), new THREE.MeshPhongMaterial()));
+        this.add(new THREE.Mesh(new TeapotGeometry(0.5), new THREE.MeshPhongMaterial({
+            side: THREE.DoubleSide
+        })));
     }
 
     public tick(delta: number): void {

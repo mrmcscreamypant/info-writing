@@ -1,4 +1,4 @@
-import { Box, Heading, Section, Text } from '@radix-ui/themes';
+import { Box, Heading, Section } from '@radix-ui/themes';
 import React from 'react';
 import './paragraph.css';
 
