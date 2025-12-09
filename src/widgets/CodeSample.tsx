@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { editor } from 'monaco-editor';
 import { v4 } from 'uuid';
 import './code-sample.css';
-import { Box } from '@radix-ui/themes';
+import { AspectRatio, Box } from '@radix-ui/themes';
 
 export const enum CodeLanguage {
     JS = 'javascript',
@@ -15,22 +15,25 @@ export default function CodeSample({ content, language = CodeLanguage.PY }: { co
 
     useEffect(() => {
         const elem = document.getElementById(uuid);
-        editor.create(elem, {
+        const view = editor.create(elem, {
             value: content,
             readOnly: true,
-            
+
             roundedSelection: true,
             scrollbar: {
-                vertical: "hidden"
+                vertical: "hidden",
+                alwaysConsumeMouseWheel: false
             },
+            wordWrap: "on",
             minimap: {
                 enabled: false
             },
             automaticLayout: true,
+            scrollBeyondLastLine: false,
             language: language,
-            theme: "vs-dark"
+            theme: "vs-dark",
         });
-    });
+    }, []);
 
-    return <Box id={uuid} className='code-sample'></Box>;
+    return <AspectRatio ratio={2} ><Box id={uuid} className='code-sample' /></AspectRatio>;
 }

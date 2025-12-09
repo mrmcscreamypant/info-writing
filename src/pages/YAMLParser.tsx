@@ -1,13 +1,18 @@
 import React from 'react';
-import * as yaml from 'js-yaml';
+import { load } from 'js-yaml';
 import Paragraph from '../widgets/Paragraph';
+import { Text } from '@radix-ui/themes';
 
-type YAMLPage = { title?: string, content: string }[];
 
-export default function YAMLParser({ markup }: { markup: string }): React.JSX.Element[] {
-    const content = yaml.load(markup) as YAMLPage;
+type YAMLParagraph = { title?: string, content: string, fig?: null };
+type YAMLPage = (YAMLParagraph)[];
+
+export default function YAMLParser({ markup, figs }: { markup: string, figs?: { [key: string]: React.JSX.Element } }): React.JSX.Element[] {
+    const content = load(markup) as YAMLPage;
 
     return content.flatMap(
-        (paragraph, i) => <Paragraph key={i} title={paragraph.title}>{paragraph.content}</Paragraph>
+        (paragraph, i: number) => <Paragraph key={i} title={paragraph.title}>
+            {paragraph.fig ? figs[paragraph.fig] : <Text>{paragraph.content}</Text>}
+        </Paragraph>
     );
 }
