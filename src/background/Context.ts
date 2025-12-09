@@ -18,5 +18,16 @@ export default abstract class Context extends Entity {
     }
 
     public abstract tick(delta: number): void;
-    public abstract get cameraPos(): THREE.Vector3;
+
+    public get cameraPos(): THREE.Vector3 {
+        const looker = new THREE.Object3D();
+        this.add(looker);
+        looker.lookAt(new THREE.Vector3());
+        const location = this.position.clone().add(
+            looker.getWorldDirection(new THREE.Vector3)
+                .multiplyScalar(5)
+        );
+        this.remove(looker);
+        return location;
+    }
 }

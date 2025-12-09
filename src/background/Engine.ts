@@ -82,12 +82,12 @@ export default class Engine {
         );
 
         const oldRot = new THREE.Vector3().setFromEuler(this.camera.rotation);
-        this.camera.lookAt(this.context ? this.context.position : new THREE.Vector3(0, 0, -1));
+        this.camera.lookAt(this.context ? this.context.position : new THREE.Vector3(0, 1, 0));
         const rot = new THREE.Vector3().copy(this.camera.rotation);
         this.camera.rotation.setFromVector3(
             rot.clone()
                 .sub(oldRot)
-                .multiplyScalar(5 * delta)
+                .multiplyScalar(2.5 * delta)
                 .add(oldRot)
         );
 

@@ -39,8 +39,4 @@ export default class TeapotContext extends Context {
         this.teapot.tick(delta);
         this.lightArray.tick(delta);
     }
-
-    public override get cameraPos(): THREE.Vector3 {
-        return this.position.clone().sub(new THREE.Vector3(0, 0, 5));
-    }
 }
