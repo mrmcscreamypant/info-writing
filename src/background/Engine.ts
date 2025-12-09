@@ -5,6 +5,7 @@ import * as POST from 'postprocessing';
 import { MotionValue } from 'motion/react';
 import LightArray from './LightArray';
 import { Location } from 'react-router';
+import Context from './Context';
 
 export type EngineHooks = {
     scrollProgress: MotionValue<number>,
@@ -22,8 +23,9 @@ export default class Engine {
     private readonly clock: THREE.Clock;
 
     private readonly camera: THREE.PerspectiveCamera;
-    private readonly cube: Cube;
     private readonly lightArray: LightArray;
+
+    private readonly context: Context;
 
     public constructor(elemID: string, getHooks: () => EngineHooks) {
         this.elem = document.getElementById(elemID) as HTMLCanvasElement;
@@ -55,9 +57,6 @@ export default class Engine {
             new POST.ASCIIEffect({ cellSize: 5 })
         ));
 
-        this.cube = new Cube(this);
-        this.scene.add(this.cube);
-
         this.lightArray = new LightArray(this);
         this.scene.add(this.lightArray);
 
@@ -74,7 +73,7 @@ export default class Engine {
 
     private mainloop(): void {
         const delta = this.clock.getDelta();
-        this.cube.tick(delta);
+        this.context.tick(delta);
         this.lightArray.tick(delta);
         this.composer.render(delta);
     }
@@ -84,5 +83,9 @@ export default class Engine {
         this.renderer.setSize(window.innerWidth, window.innerHeight, false);
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix();
+    }
+
+    public switchContext(location: Location): void {
+        console.log(location);
     }
 }

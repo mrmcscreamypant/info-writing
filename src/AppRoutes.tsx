@@ -3,7 +3,7 @@ import { HashRouter, Location, Route, Routes, useLocation } from 'react-router';
 import Index from './pages';
 import Narrative from './pages/Narrative';
 
-export const enum AppRoute {
+export enum AppRoute {
     INDEX = "/",
     NARRATIVE = "narrative",
 }
