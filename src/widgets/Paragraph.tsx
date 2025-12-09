@@ -19,7 +19,7 @@ export default function Paragraph({ title, children }: { title?: string } & Reac
     }}>
         <Section>
             {title ? <Heading color="teal">{title}</Heading> : null}
-            <Box>
+            <Box className="paragraph">
                 <Text>
                     {children}
                 </Text>

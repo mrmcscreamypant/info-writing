@@ -18,7 +18,11 @@ export default function CodeSample({ content, language = CodeLanguage.PY }: { co
         editor.create(elem, {
             value: content,
             readOnly: true,
+            
             roundedSelection: true,
+            scrollbar: {
+                vertical: "hidden"
+            },
             minimap: {
                 enabled: false
             },

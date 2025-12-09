@@ -9,6 +9,10 @@ body,
     margin: 0px;
 }
 
+#content {
+    background-color: transparent;
+}
+
 * {
     scrollbar-width: none;
 }

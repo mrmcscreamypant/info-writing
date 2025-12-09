@@ -1,3 +1,4 @@
-.page::after {
+.page {
     position: relative;
+    margin-top: 25%;
 }
