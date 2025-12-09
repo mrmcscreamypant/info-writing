@@ -28,7 +28,7 @@ export default function CodeSample({ content, language = CodeLanguage.PY, file }
         let model;
         try {
             model = monaco.editor.createModel(content, language, uri);
-        } catch (e) {
+        } catch {
             model = monaco.editor.getModel(uri);
         }
 
