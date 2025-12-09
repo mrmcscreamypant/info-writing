@@ -2,16 +2,7 @@ import React, { useEffect } from 'react';
 import * as monaco from 'monaco-editor';
 import { v4 } from 'uuid';
 import './code-sample.css';
-import { AspectRatio, Box, Card } from '@radix-ui/themes';
-
-monaco.typescript.typescriptDefaults.setCompilerOptions({
-    jsx: monaco.typescript.JsxEmit.ReactJSX
-});
-
-monaco.typescript.typescriptDefaults.setDiagnosticsOptions({
-    noSemanticValidation: false,
-    noSyntaxValidation: false
-});
+import { AspectRatio, Card } from '@radix-ui/themes';
 
 export const enum CodeLanguage {
     JS = 'javascript',
@@ -24,6 +15,7 @@ export default function CodeSample({ content, language = CodeLanguage.PY, file =
 
     useEffect(() => {
         const elem = document.getElementById(uuid);
+
         monaco.editor.create(elem, {
             readOnly: true,
             language: language,
