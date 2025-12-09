@@ -2,9 +2,16 @@ import * as THREE from 'three';
 import Cube from './Cube';
 
 import * as POST from 'postprocessing';
+import { MotionValue } from 'motion/react';
+
+export type EngineHooks = {
+    scrollProgress: MotionValue<number>,
+    scrollVelocity: MotionValue<number>
+}
 
 export default class Engine {
     private readonly elem: HTMLCanvasElement;
+    private readonly getHooks: () => EngineHooks;
 
     private readonly renderer: THREE.WebGLRenderer;
     private readonly composer: POST.EffectComposer;
@@ -14,13 +21,15 @@ export default class Engine {
     private readonly camera: THREE.PerspectiveCamera;
     private readonly cube: Cube;
 
-    public constructor(elemID: string) {
+    public constructor(elemID: string, getHooks: () => EngineHooks) {
         this.elem = document.getElementById(elemID) as HTMLCanvasElement;
 
         this.clock = new THREE.Clock();
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera();
         this.scene.add(this.camera);
+
+        this.getHooks = getHooks;
 
         this.renderer = new THREE.WebGLRenderer({
             canvas: this.elem,
@@ -41,7 +50,7 @@ export default class Engine {
             new POST.ASCIIEffect({ cellSize: 5 })
         ));
 
-        this.cube = new Cube();
+        this.cube = new Cube(this);
         this.scene.add(this.cube);
         this.cube.position.z = -5;
 
@@ -50,6 +59,10 @@ export default class Engine {
         this.handleResize();
 
         this.renderer.setAnimationLoop((): void => this.mainloop());
+    }
+
+    public get hooks(): EngineHooks {
+        return this.getHooks();
     }
 
     private mainloop(): void {
