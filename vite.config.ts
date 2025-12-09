@@ -3,5 +3,5 @@ import monacoEditorPlugin from 'vite-plugin-monaco-editor';
 
 export default defineConfig({
     base: "https://mrmcscreamypant.github.io/info-writing/",
-    plugins: [monacoEditorPlugin({})]
+    plugins: [monacoEditorPlugin({ publicPath: "/info-writing" })]
 });
