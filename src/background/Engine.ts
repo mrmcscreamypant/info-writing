@@ -4,10 +4,12 @@ import Cube from './Cube';
 import * as POST from 'postprocessing';
 import { MotionValue } from 'motion/react';
 import LightArray from './LightArray';
+import { Location } from 'react-router';
 
 export type EngineHooks = {
     scrollProgress: MotionValue<number>,
-    scrollVelocity: MotionValue<number>
+    scrollVelocity: MotionValue<number>,
+    currentPage: Location
 }
 
 export default class Engine {

@@ -6,6 +6,7 @@ import Background from '../background/Background';
 import { AnimatePresence, useScroll, useVelocity } from 'motion/react';
 import { EngineHooks } from '../background/Engine';
 import { Theme } from '@radix-ui/themes';
+import { Location } from 'react-router';
 
 export function App(): React.JSX.Element {
     const pageScrollRef = React.useRef(null) as React.RefObject<HTMLDivElement>;
@@ -13,16 +14,19 @@ export function App(): React.JSX.Element {
         target: pageScrollRef
     });
 
+    const [currentPage, setCurrentPage] = React.useState<Location>();
+
     const engineHooks: EngineHooks = {
         scrollProgress: scrollYProgress,
-        scrollVelocity: useVelocity(scrollY)
+        scrollVelocity: useVelocity(scrollY),
+        currentPage
     };
 
     return <Theme appearance='dark'>
         <Background engineHooks={engineHooks} />
         <div id="content" ref={pageScrollRef}>
             <AnimatePresence>
-            <AppRoutes />
+                <AppRoutes setCurrentPage={setCurrentPage} />
             </AnimatePresence>
         </div>
     </Theme>;
