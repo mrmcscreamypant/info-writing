@@ -14,10 +14,10 @@ export default function Paragraph({ title, children }: { title?: string } & Reac
     const anim = transformValue(() => Math.sqrt(Math.sin(scrollYProgress.get() * Math.PI)));
 
     return <motion.div ref={paragraphRef} style={{
-        transform: transformValue(() => `scale(1.0, ${anim.get()})`),
+        transform: transformValue(() => `scale(1,${anim.get()})`),
         opacity: anim
     }}>
-        <Section>
+        <Section size={"1"}>
             {title ? <Heading color="teal">{title}</Heading> : null}
             <Box className="paragraph">
                 {children}
