@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import Engine from './Engine';
 import { Entity } from './Entity';
 
@@ -17,4 +18,5 @@ export default abstract class Context extends Entity {
     }
 
     public abstract tick(delta: number): void;
+    public abstract get cameraPos(): THREE.Vector3;
 }

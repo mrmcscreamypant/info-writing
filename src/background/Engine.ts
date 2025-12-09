@@ -26,7 +26,6 @@ export default class Engine {
 
     private context: Context;
     private lastContext: Context;
-    private contextInterp: number = 0;
 
     public constructor(elemID: string, getHooks: () => EngineHooks) {
         this.elem = document.getElementById(elemID) as HTMLCanvasElement;
@@ -74,6 +73,24 @@ export default class Engine {
         if (this.context) {
             this.context.tick(delta);
         }
+        const targetPos = this.context ? this.context.cameraPos : new THREE.Vector3();
+
+        this.camera.position.add(
+            targetPos
+                .sub(this.camera.position)
+                .multiplyScalar(delta)
+        );
+
+        const oldRot = new THREE.Vector4().copy(this.camera.quaternion);
+        this.camera.lookAt(this.context ? this.context.position : new THREE.Vector3(0, 0, -1));
+        const rot = new THREE.Vector4().copy(this.camera.quaternion);
+        this.camera.quaternion.copy(
+            rot.clone()
+                .sub(oldRot)
+                .multiplyScalar(delta)
+                .add(oldRot).normalize()
+        );
+
         this.composer.render(delta);
     }
 
@@ -85,16 +102,14 @@ export default class Engine {
     }
 
     public switchContext(location: Location): void {
-        this.lastContext = this.context;
-        this.contextInterp = 0;
-        if (this.context) {
-            this.context.removeFromParent();
+        if (this.lastContext) {
+            this.lastContext.removeFromParent();
         }
+        this.lastContext = this.context;
         const contextConstructor = ContextMappings[location.pathname as AppRoute];
         if (contextConstructor) {
             this.context = new contextConstructor(this);
             this.scene.add(this.context);
-            this.camera.lookAt(this.context.position);
             return;
         }
         this.context = null;
