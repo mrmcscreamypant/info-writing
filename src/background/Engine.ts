@@ -2,7 +2,6 @@ import * as THREE from 'three';
 
 import * as POST from 'postprocessing';
 import { MotionValue } from 'motion/react';
-import LightArray from './LightArray';
 import { Location } from 'react-router';
 import Context from './Context';
 import { ContextMappings } from './ContextMappings';
@@ -24,9 +23,10 @@ export default class Engine {
     private readonly clock: THREE.Clock;
 
     private readonly camera: THREE.PerspectiveCamera;
-    private readonly lightArray: LightArray;
 
     private context: Context;
+    private lastContext: Context;
+    private contextInterp: number = 0;
 
     public constructor(elemID: string, getHooks: () => EngineHooks) {
         this.elem = document.getElementById(elemID) as HTMLCanvasElement;
@@ -58,9 +58,6 @@ export default class Engine {
             new POST.ASCIIEffect({ cellSize: 5 })
         ));
 
-        this.lightArray = new LightArray(this);
-        this.scene.add(this.lightArray);
-
         window.onresize = (): void => this.handleResize();
 
         this.handleResize();
@@ -77,7 +74,6 @@ export default class Engine {
         if (this.context) {
             this.context.tick(delta);
         }
-        this.lightArray.tick(delta);
         this.composer.render(delta);
     }
 
@@ -89,6 +85,8 @@ export default class Engine {
     }
 
     public switchContext(location: Location): void {
+        this.lastContext = this.context;
+        this.contextInterp = 0;
         if (this.context) {
             this.context.removeFromParent();
         }
@@ -96,6 +94,7 @@ export default class Engine {
         if (contextConstructor) {
             this.context = new contextConstructor(this);
             this.scene.add(this.context);
+            this.camera.lookAt(this.context.position);
             return;
         }
         this.context = null;
