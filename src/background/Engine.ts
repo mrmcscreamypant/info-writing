@@ -3,6 +3,7 @@ import Cube from './Cube';
 
 import * as POST from 'postprocessing';
 import { MotionValue } from 'motion/react';
+import LightArray from './LightArray';
 
 export type EngineHooks = {
     scrollProgress: MotionValue<number>,
@@ -20,6 +21,7 @@ export default class Engine {
 
     private readonly camera: THREE.PerspectiveCamera;
     private readonly cube: Cube;
+    private readonly lightArray: LightArray;
 
     public constructor(elemID: string, getHooks: () => EngineHooks) {
         this.elem = document.getElementById(elemID) as HTMLCanvasElement;
@@ -27,6 +29,7 @@ export default class Engine {
         this.clock = new THREE.Clock();
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera();
+        this.camera.position.z = 5;
         this.scene.add(this.camera);
 
         this.getHooks = getHooks;
@@ -52,7 +55,9 @@ export default class Engine {
 
         this.cube = new Cube(this);
         this.scene.add(this.cube);
-        this.cube.position.z = -5;
+
+        this.lightArray = new LightArray(this);
+        this.scene.add(this.lightArray);
 
         window.onresize = (): void => this.handleResize();
 
@@ -68,6 +73,7 @@ export default class Engine {
     private mainloop(): void {
         const delta = this.clock.getDelta();
         this.cube.tick(delta);
+        this.lightArray.tick(delta);
         this.composer.render(delta);
     }
 

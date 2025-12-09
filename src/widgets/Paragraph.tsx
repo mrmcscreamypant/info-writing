@@ -8,7 +8,7 @@ export default function Paragraph({ title, children }: { title?: string } & Reac
     const paragraphRef = React.useRef(null) as React.RefObject<HTMLDivElement>;
     const { scrollYProgress } = useScroll({
         target: paragraphRef,
-        offset: ["start start", "end end"]
+        offset: ['center start', "center end"]
     });
 
     const anim = transformValue(() => Math.sqrt(Math.sin(scrollYProgress.get() * Math.PI)));
