@@ -34,6 +34,7 @@ export default class Engine {
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera();
         this.camera.position.z = 5;
+        this.camera.rotation.order = "YXZ";
         this.scene.add(this.camera);
 
         this.getHooks = getHooks;
