@@ -17,5 +17,9 @@
     into it, which is as bad as it sounds.
 
 - title: |
-    Possibly the most atrocious files:
+    Possibly the most atrocious file:
   fig: inception
+
+- content: |
+    ...which is ironically used to render the blocks of code. I am using the Monaco Code Editor
+    for this, which 
