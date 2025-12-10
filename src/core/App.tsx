@@ -23,11 +23,9 @@ export function App(): React.JSX.Element {
     };
 
     return <Theme appearance='dark'>
-        <Background engineHooks={engineHooks} />
+        <Background engineHooks={engineHooks}/>
         <div id="content" ref={pageScrollRef}>
-            <AnimatePresence>
-                <AppRoutes setCurrentPage={setCurrentPage} />
-            </AnimatePresence>
+            <AppRoutes setCurrentPage={setCurrentPage} />
         </div>
     </Theme>;
 }

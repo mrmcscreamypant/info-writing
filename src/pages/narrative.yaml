@@ -22,4 +22,5 @@
 
 - content: |
     ...which is ironically used to render the blocks of code. I am using the Monaco Code Editor
-    for this, which 
+    for this. It lacks full type inference as it only can see the scope of the file (which means
+    the JSX syntax highlighting is a little iffy at times), but it has the right effect.

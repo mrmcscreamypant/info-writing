@@ -6,12 +6,18 @@ import { Container } from '@radix-ui/themes';
 import { motion } from 'motion/react';
 
 export default function Page({ children }: React.PropsWithChildren): React.JSX.Element {
+    const [loaded, setLoaded] = React.useState<boolean>(false);
+
+    React.useEffect(() => { setLoaded(true); }, []);
+
     return <>
-        {/*<ScrollRestoration />*/}
-        <Container size={"3"}>
-            <motion.div className='page'>
-                {children}
-            </motion.div>
-        </Container>
+        {loaded ?
+            <Container size={"3"}>
+                <motion.div className='page'>
+                    {children}
+                </motion.div>
+            </Container> :
+            <>LOADING...</>
+        }
     </>;
 }

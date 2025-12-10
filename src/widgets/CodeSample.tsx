@@ -11,7 +11,7 @@ import htmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker';
 import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker';
 
 self.MonacoEnvironment = {
-    getWorker(_, label): Worker {
+    getWorker(_: string, label: string): Worker {
         if (label === 'json') {
             return new jsonWorker();
         }
@@ -27,6 +27,10 @@ self.MonacoEnvironment = {
         return new editorWorker();
     }
 };
+
+monaco.typescript.typescriptDefaults.setCompilerOptions({
+    jsx: monaco.typescript.JsxEmit.ReactJSX
+});
 
 export const enum CodeLanguage {
     JS = 'javascript',
@@ -52,7 +56,6 @@ export default function CodeSample({ content, language = CodeLanguage.PY, file }
             model: model,
             roundedSelection: true,
             scrollbar: {
-                vertical: "hidden",
                 alwaysConsumeMouseWheel: false
             },
             minimap: {

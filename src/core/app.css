@@ -16,3 +16,9 @@ body,
 * {
     scrollbar-width: none;
 }
+
+.radix-themes {
+    --my-brand-color: #23a621;
+    --indigo-9: var(--my-brand-color);
+    --indigo-a9: var(--my-brand-color);
+}
