@@ -3,25 +3,40 @@ import Engine from '../Engine';
 import Context from "../Context";
 
 import { Entity } from '../Entity';
-import { GLTF, GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import LightArray from '../LightArray';
-
-import titleURL from '../models/TestText.glb?url';
-
-const title: GLTF = await new GLTFLoader().loadAsync(titleURL);
-title.scene.scale.setScalar(0.2);
 
 class TitleEntity extends Entity {
+    declare public children: THREE.Mesh[];
+    private time: number = 0;
+
     public constructor(engine: Engine) {
         super(engine);
 
-        this.add(title.scene.clone());
-        this.lookAt(new THREE.Vector3);
-        this.rotation.y += Math.PI / 2;
+        for (let i = 0; i < 10; i++) {
+            this.add(new THREE.Mesh(
+                new THREE.BoxGeometry(0.5, 0.5, 0.5),
+                new THREE.MeshNormalMaterial()
+            ));
+        }
+    }
+
+    private cubePosition(i: number): THREE.Vector3 {
+        const theta = i / this.children.length * 2 * Math.PI;
+        return new THREE.Vector3(
+            Math.sin(theta + this.time),
+            Math.tan(theta)/2,
+            Math.cos(theta + this.time)
+        );
     }
 
     public tick(delta: number): void {
+        this.time += delta;
+
         this.rotation.y += 0.3 * delta;
+
+
+        for (let i = 0; i < this.children.length; i++) {
+            this.children[i].position.copy(this.cubePosition(i));
+        }
     }
 }
 
@@ -37,14 +52,14 @@ export default class TitleContext extends Context {
         const directionalLight = new THREE.SpotLight(0x00ccee, 1000, 0, Math.PI / 8);
         directionalLight.target = this.title;
         directionalLight.position.z = 5;
-        this.add(directionalLight);
+        //this.add(directionalLight);
     }
 
     public override tick(delta: number): void {
         this.title.tick(delta);
     }
 
-    public override get cameraPos(): THREE.Vector3 {
+    /*public override get cameraPos(): THREE.Vector3 {
         return new THREE.Vector3;
-    }
+    }*/
 }

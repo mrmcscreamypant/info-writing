@@ -6,6 +6,9 @@ import { Location } from 'react-router';
 import Context from './Context';
 import { ContextMappings } from './ContextMappings';
 import { AppRoute } from '../AppRoutes';
+import { OverrideMaterialManager } from 'postprocessing';
+
+OverrideMaterialManager.workaroundEnabled = true;
 
 export type EngineHooks = {
     scrollProgress: MotionValue<number>,
@@ -69,9 +72,9 @@ export default class Engine {
     }
 
     private mainloop(): void {
-        const delta = Math.min(this.clock.getDelta(), 1.5);
+        const delta = Math.min(this.clock.getDelta(), 0.5);
         if (this.context) {
-            this.context.tick(delta);
+            this.context.tick(Math.min(0.5 * delta, 1));
         }
         const targetPos = this.context ? this.context.cameraPos : new THREE.Vector3;
 
