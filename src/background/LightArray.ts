@@ -9,7 +9,7 @@ export default class LightArray extends Entity {
     private static readonly colors: THREE.ColorRepresentation[] = [
         'orange',
         'green',
-        'teal'
+        'teal',
     ];
 
     private elapsed: number = 0;

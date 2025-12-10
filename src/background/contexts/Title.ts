@@ -12,12 +12,13 @@ class TitleEntity extends Entity {
     public constructor(engine: Engine) {
         super(engine);
 
-        const CUBE_SIZE = 0.3;
-        const CUBE_COUNT = 20;
+        const OBJECT_SIZE = 0.1;
+        const OBJECT_COUNT = 32;
 
-        for (let i = 0; i < CUBE_COUNT; i++) {
+        for (let i = 0; i < OBJECT_COUNT; i++) {
             this.add(new THREE.Mesh(
-                new THREE.BoxGeometry(CUBE_SIZE, CUBE_SIZE, CUBE_SIZE),
+                //new THREE.SphereGeometry(OBJECT_SIZE),
+                new THREE.BoxGeometry(OBJECT_SIZE, OBJECT_SIZE, OBJECT_SIZE),
                 new THREE.MeshPhysicalMaterial({
                     metalness: 0.5
                 })
