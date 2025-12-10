@@ -1,11 +1,11 @@
 .page {
     position: relative;
     margin-top: 50vh;
-    margin-bottom: 35vh;
+    margin-bottom: 50vh;
 
     min-height: 75vh;
 }
 
 .footer {
-    height: 20vh;
+    height: 100vh;
 }

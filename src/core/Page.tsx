@@ -6,7 +6,7 @@ import { Container } from '@radix-ui/themes';
 import { motion } from 'motion/react';
 
 function Footer(): React.JSX.Element {
-    return <>Footer</>;
+    return <div className="footer">Footer</div>;
 }
 
 export default function Page({ children, noFooter }: { noFooter?: boolean } & React.PropsWithChildren): React.JSX.Element {
