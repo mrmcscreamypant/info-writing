@@ -16,7 +16,7 @@ class TeapotEntity extends Entity {
     }
 
     public tick(delta: number): void {
-        const gValue = (this.engine.hooks.scrollVelocity.get() / 500 + 0.1) * delta;
+        const gValue = (this.engine.hooks.scrollVelocity.get() / 128 + 0.1) * delta;
 
         this.rotation.x += gValue * 1.5;
         this.rotation.y += gValue;

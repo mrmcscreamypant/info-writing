@@ -6,9 +6,6 @@ import { Location } from 'react-router';
 import Context from './Context';
 import { ContextMappings } from './ContextMappings';
 import { AppRoute } from '../AppRoutes';
-import { OverrideMaterialManager } from 'postprocessing';
-
-OverrideMaterialManager.workaroundEnabled = true;
 
 export type EngineHooks = {
     scrollProgress: MotionValue<number>,

@@ -22,8 +22,8 @@ class TitleEntity extends Entity {
     private cubePosition(i: number): THREE.Vector3 {
         const theta = i / this.children.length * 2 * Math.PI;
         return new THREE.Vector3(
-            Math.sin(theta + this.time),
-            Math.tan(theta)/2,
+            Math.sin(theta * (i / this.children.length) + this.time),
+            Math.tan(theta + Math.cos(this.time) ^ 2) / 2,
             Math.cos(theta + this.time)
         );
     }

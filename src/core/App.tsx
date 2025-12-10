@@ -10,9 +10,7 @@ import { Location } from 'react-router';
 
 export function App(): React.JSX.Element {
     const pageScrollRef = React.useRef(null) as React.RefObject<HTMLDivElement>;
-    const { scrollYProgress, scrollY } = useScroll({
-        target: pageScrollRef
-    });
+    const { scrollYProgress, scrollY } = useScroll();
 
     const [currentPage, setCurrentPage] = React.useState<Location>();
 
@@ -23,7 +21,7 @@ export function App(): React.JSX.Element {
     };
 
     return <Theme appearance='dark'>
-        <Background engineHooks={engineHooks}/>
+        <Background engineHooks={engineHooks} />
         <div id="content" ref={pageScrollRef}>
             <AppRoutes setCurrentPage={setCurrentPage} />
         </div>
