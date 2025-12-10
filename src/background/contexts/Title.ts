@@ -3,6 +3,7 @@ import Engine from '../Engine';
 import Context from "../Context";
 
 import { Entity } from '../Entity';
+import LightArray from '../LightArray';
 
 class TitleEntity extends Entity {
     declare public children: THREE.Mesh[];
@@ -11,10 +12,15 @@ class TitleEntity extends Entity {
     public constructor(engine: Engine) {
         super(engine);
 
-        for (let i = 0; i < 10; i++) {
+        const CUBE_SIZE = 0.3;
+        const CUBE_COUNT = 20;
+
+        for (let i = 0; i < CUBE_COUNT; i++) {
             this.add(new THREE.Mesh(
-                new THREE.BoxGeometry(0.5, 0.5, 0.5),
-                new THREE.MeshNormalMaterial()
+                new THREE.BoxGeometry(CUBE_SIZE, CUBE_SIZE, CUBE_SIZE),
+                new THREE.MeshPhysicalMaterial({
+                    metalness: 0.5
+                })
             ));
         }
     }
@@ -23,13 +29,13 @@ class TitleEntity extends Entity {
         const theta = i / this.children.length * 2 * Math.PI;
         return new THREE.Vector3(
             Math.sin(theta * (i / this.children.length) + this.time),
-            Math.tan(theta + Math.cos(this.time) ^ 2) / 2,
+            Math.tan(theta + Math.sin(this.time * theta / 2)),
             Math.cos(theta + this.time)
         );
     }
 
     public tick(delta: number): void {
-        this.time += delta;
+        this.time += (this.engine.hooks.scrollVelocity.get() / 256 + 0.1) * delta;
 
         this.rotation.y += 0.3 * delta;
 
@@ -42,6 +48,7 @@ class TitleEntity extends Entity {
 
 export default class TitleContext extends Context {
     private readonly title: TitleEntity;
+    private readonly lightArray: LightArray;
 
     public constructor(engine: Engine) {
         super(engine);
@@ -49,14 +56,13 @@ export default class TitleContext extends Context {
         this.title = new TitleEntity(this.engine);
         this.add(this.title);
 
-        const directionalLight = new THREE.SpotLight(0x00ccee, 1000, 0, Math.PI / 8);
-        directionalLight.target = this.title;
-        directionalLight.position.z = 5;
-        //this.add(directionalLight);
+        this.lightArray = new LightArray(this.engine);
+        this.add(this.lightArray);
     }
 
     public override tick(delta: number): void {
         this.title.tick(delta);
+        this.lightArray.tick(delta);
     }
 
     /*public override get cameraPos(): THREE.Vector3 {
