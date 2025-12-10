@@ -22,10 +22,10 @@ export default class Engine {
     private readonly scene: THREE.Scene;
     private readonly clock: THREE.Clock;
 
-    private readonly camera: THREE.PerspectiveCamera;
+    public readonly camera: THREE.PerspectiveCamera;
 
-    private context: Context;
-    private lastContext: Context;
+    public context: Context;
+    public lastContext: Context;
 
     public constructor(elemID: string, getHooks: () => EngineHooks) {
         this.elem = document.getElementById(elemID) as HTMLCanvasElement;
@@ -69,25 +69,25 @@ export default class Engine {
     }
 
     private mainloop(): void {
-        const delta = Math.min(this.clock.getDelta(), 3);
+        const delta = Math.min(this.clock.getDelta(), 1.5);
         if (this.context) {
             this.context.tick(delta);
         }
-        const targetPos = this.context ? this.context.cameraPos : new THREE.Vector3();
+        const targetPos = this.context ? this.context.cameraPos : new THREE.Vector3;
 
         this.camera.position.add(
             targetPos
                 .sub(this.camera.position)
-                .multiplyScalar(delta)
+                .multiplyScalar(Math.min(0.8 * delta, 1))
         );
 
-        const oldRot = new THREE.Vector3().setFromEuler(this.camera.rotation);
+        const oldRot = (new THREE.Vector3).setFromEuler(this.camera.rotation);
         this.camera.lookAt(this.context ? this.context.position : new THREE.Vector3(0, 1, 0));
-        const rot = new THREE.Vector3().copy(this.camera.rotation);
+        const rot = (new THREE.Vector3).copy(this.camera.rotation);
         this.camera.rotation.setFromVector3(
             rot.clone()
                 .sub(oldRot)
-                .multiplyScalar(2.5 * delta)
+                .multiplyScalar(Math.min(0.8 * delta, 1))
                 .add(oldRot)
         );
 

@@ -44,7 +44,7 @@ export default function CodeSample({ content, language = CodeLanguage.PY, file }
     useEffect(() => {
         const elem = document.getElementById(uuid);
         const uri = file ? monaco.Uri.file(file) : null;
-        let model;
+        let model: monaco.editor.ITextModel;
         try {
             model = monaco.editor.createModel(content, language, uri);
         } catch {
