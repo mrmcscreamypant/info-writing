@@ -11,11 +11,12 @@
     are just seeing things. This was made in a perfectly normal way in Google Sites.
 
 - content: |
-    Before you drive yourself insane trying to replicate this,this was not
-    (entirely) made in google sites. This whole project is a culmination of
-    several of my particular skill sets, and my mess of poorly documented by
-    heavily type-checked spaghetti code is probably inscrutable to everyone
-    but me. Here's a sample:
+    Before you drive yourself insane trying to replicate this, this was not
+    (entirely) made in Google Sites. This whole project is a culmination of
+    several of my particular skill sets, and my mess of poorly (un)documented
+    but heavily type-checked (one of the reasons that typescript is infinitely
+    better) spaghetti code is probably inscrutable to everyone but me. Here's
+    a sample:
 
 - fig: spaghetti
 
@@ -32,18 +33,18 @@
   content: |
     Without any further ado:
 
-- fig: git
+- fig: knowledge
 
 - content: |
-    If you don't get the joke in the comic above (or know what git is, but the two
-    are generally synonymous), then there is no way I can possibly explain what I
-    did in any meaningful way that you will understand. I am sorry. All of my attempts
-    so far at doing so have wound up with "too many technical words". The way I brought a number of different concepts together (React,
-    THREE, vite, Github CI, YAML, etc.) in this makes it impossible (I really wish I
-    could use italics) for me to explain how they all work together <i>without</i>
-    (see?) a highly technical explanation. The best example of this that I can think
-    of is to ask someone who's first language is English (and who is not an English
-    major) for the definition of "adnoun".
+    Unfortunately, the above comic is accurate. Then there is no way I can possibly
+    explain what I did in any meaningful way that you will understand. I am sorry.
+    All of my attempts so far at doing so have wound up with "too many technical
+    words". The way I brought a number of different concepts together (React, THREE,
+    vite, Github CI, YAML, etc.) in this makes it impossible (I really wish I could
+    use italics) for me to explain how they all work together <i>without</i> (see?)
+    a highly technical explanation. The best example of this that I can think of is
+    to ask someone who's first language is English (and who is not an English major)
+    for the definition of "adnoun".
 
 - content: |
     (That wasn't really the best analogy but your reaction was too funny to pass up;
@@ -70,9 +71,9 @@
 
 - content: |
     The actual content of the site is actually rendered with React, which is a Javascript
-    framework for creating webpages (in other words, a form of self-torture). I understand
-    what is going on in the following file, but I doubt any explanation on my part will
-    help you do so:
+    (but Typescript-compatible) framework for creating webpages (in other words, a form
+    of self-torture). I understand what is going on in the following file, but I doubt
+    any explanation on my part will help you do so:
 
 - fig: entrypoint
 
@@ -89,6 +90,16 @@
 
 - fig: thisIsNotInceptionThisIsFractalAndNotEven
 
+###############################################
+# EVERYTHING AFTER THIS YOU HAVE NOT READ YET #
+###############################################
+
+- content: |
+    Given that this is for an "Informational Writing" course, and I have provided the
+    information in a form that people can (hopefully) understand, I suppose it is time
+    to wrap this up.
+
+- fig: git
 
 - content: |
     Also, there was no teapot.

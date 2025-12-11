@@ -58,7 +58,7 @@ export default function CodeSample({ content, language = CodeLanguage.PY, file }
             model: model,
             roundedSelection: true,
             scrollbar: {
-                alwaysConsumeMouseWheel: false
+                //alwaysConsumeMouseWheel: false
             },
             minimap: {
                 enabled: false

@@ -10,18 +10,37 @@ import spaghettiCodeSample from '../background/Engine?raw';
 import htmlCodeSample from '../../index.html?raw';
 import entrypointCodeSample from '../index?raw';
 
+const xkcdCredit = "Image credit: xkcd.com";
+
 export default function Narrative(): React.JSX.Element {
     return <Page>
         <YAMLParser markup={document} figs={{
             spaghetti: <CodeSample content={spaghettiCodeSample} language={CodeLanguage.TS} file='Engine.ts' />,
+            knowledge: <AppImage
+                src="https://imgs.xkcd.com/comics/average_familiarity.png"
+                credit={xkcdCredit}
+                caption="Sorry if this is the case."
+            />,
+            html: <CodeSample
+                content={htmlCodeSample}
+                language={CodeLanguage.HTML}
+                file='index.html'
+            />,
+            entrypoint: <CodeSample
+                content={entrypointCodeSample}
+                language={CodeLanguage.TS}
+                file='index.tsx'
+            />,
+            thisIsNotInceptionThisIsFractalAndNotEven: <CodeSample
+                content={document}
+                language={CodeLanguage.YAML}
+                file='narrative.yaml'
+            />,
             git: <AppImage
                 src="https://imgs.xkcd.com/comics/git.png"
-                credit="Image credit: xkcd.com"
-                caption="I think I'm getting better at using react, as I did not once have to do this for this project, which is a first."
-            />,
-            html: <CodeSample content={htmlCodeSample} language={CodeLanguage.HTML} file='index.html' />,
-            entrypoint: <CodeSample content={entrypointCodeSample} language={CodeLanguage.TS} file='index.tsx' />,
-            thisIsNotInceptionThisIsFractalAndNotEven: <CodeSample content={document} language={CodeLanguage.YAML} file='narrative.yaml' />
+                credit={xkcdCredit}
+                caption={`I think I'm getting better at using React, as I did not once have to do this for this project, which is a first. To which you ask: "How does React manage to corrupt your local branch?" "Yes"`}
+            />
         }} />
     </Page>;
 }
