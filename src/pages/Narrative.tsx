@@ -15,7 +15,7 @@ export default function Narrative(): React.JSX.Element {
             git: <AppImage
                 src="https://imgs.xkcd.com/comics/git.png"
                 credit="Image credit: xkcd.com"
-                caption="I think I'm getting better at using react, as I did not once have to do this for this project, which is a first"
+                caption="I think I'm getting better at using react, as I did not once have to do this for this project, which is a first."
             />
         }} />
     </Page>;
