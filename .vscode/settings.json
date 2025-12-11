@@ -2,5 +2,8 @@
     "typescript.tsdk": "node_modules/typescript/lib",
     "github-actions.workflows.pinned.workflows": [
         ".github/workflows/static.yml"
+    ],
+    "cSpell.words": [
+        "vite"
     ]
 }
