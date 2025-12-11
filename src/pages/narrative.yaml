@@ -1,4 +1,4 @@
-- title: Don’t ask about the teapot
+- title: Don't ask about the teapot
   content: |
     There is no teapot. The teapot does not spin as you scroll the page. Speaking
     of scrolling the page, the text does not do something weird as you do so. You
@@ -22,27 +22,41 @@
     loop and handle the camera motion between pages. Also, the glitch postprocessing
     effect is intentional.
 
+- title: How I made this
+  content: |
+    Without any further ado:
+
 - fig: git
 
 - content: |
     If you don't get the joke in the comic above (or know what git is, but the two
     are generally synonymous), then there is no way I can possibly explain what I
     did in any meaningful way that you will understand. I am sorry. All of my attempts
-    so far at doing so have wound up with "too many technical words". The best example
-    of this that I can think of is to ask someone who's first language is English (who
-    is not an English major) for the definition of "adnoun".
+    so far at doing so have wound up with "too many technical words". The way I brought a number of different concepts together (React,
+    THREE, vite, Github CI, yaml, etc.) in this makes it impossible (I really wish I
+    could use italics) for me to explain how they all work together <i>without</i>
+    (see?) a highly technical explanation. The best example of this that I can think
+    of is to ask someone who's first language is English (and who is not an English
+    major) for the definition of "adnoun".
 
 - content: |
-    Jokes aside, the only way that I can really describe the way I made this is with
-    the preceding paragraph. The way I brought a number of different concepts together
-    (React, THREE, vite, Github CI, iframes, etc.) in this makes it impossible (I really wish
-    I could use italics) for me to explain how they all work together <i>without</i>
-    (see?) a highly technical explanation.
+    (That wasn't really the best analogy but your reaction was too funny to pass up;
+    Alternatively, try "hyponym", which is probably a better comparison).
 
 - title: |
     With that out of the way, here is my best shot at doing what I just said was impossible:
-  content:
-    foo
+  content: |
+    As with most things on the internet, it starts with a HTML file. This HTML file, 
+    to be specific:
+
+- fig: html
+
+- content: |
+    This is the file from the source code, not the actual production site (read: the one
+    you are currently looking at). This is for a number of reasons (which I am not going
+    to be able to explain), but topographically not much is different.
+
+
 
 - content: |
     Also, there was no teapot.

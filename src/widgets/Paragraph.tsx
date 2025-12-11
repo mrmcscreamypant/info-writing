@@ -1,4 +1,4 @@
-import { Box, Heading, Section } from '@radix-ui/themes';
+import { Box, Heading, Section, Separator } from '@radix-ui/themes';
 import React from 'react';
 import './paragraph.css';
 
@@ -18,7 +18,12 @@ export default function Paragraph({ title, children }: { title?: string } & Reac
         opacity: anim
     }}>
         <Section size={"1"}>
-            {title ? <Heading color="teal">{title}</Heading> : null}
+            {
+                title ? <>
+                    <Heading color="teal">{title}</Heading>
+                    <Separator my="3" size="4" />
+                </> : null
+            }
             <Box className="paragraph">
                 {children}
             </Box>
