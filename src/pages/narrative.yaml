@@ -16,8 +16,11 @@
     in question handles the rendering of [NO TEAPOTS WHATSOEVER] on background of
     the site. I'm making use of a library called THREE.js for the actual 3D rendering,
     as the actual math and algorithms that go into 3D graphics go well over my head.
-    All that file (technically the class contained within) does is setup the rendering
-    loop and handle the camera motion between pages.
+    All the file (technically the class contained within) does is setup the rendering
+    loop and handle the camera motion between pages. Also, the glitch postprocessing
+    effect is intentional.
+
+- fig: git
 
 
 - content: |
