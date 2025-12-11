@@ -61,6 +61,7 @@ export default function CodeSample({ content, language = CodeLanguage.PY, file }
             minimap: {
                 enabled: false
             },
+            contextmenu: false,
             automaticLayout: true,
             scrollBeyondLastLine: false,
             theme: "vs-dark",
