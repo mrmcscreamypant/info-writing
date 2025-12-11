@@ -7,7 +7,7 @@ import { AppRoute } from '../AppRoutes';
 import { Text } from '@radix-ui/themes';
 
 export default function Index(): React.JSX.Element {
-    return <Page>
+    return <Page noFooter>
         <Paragraph title="Hello Wold">
             <Text>There is quite a lot going on here</Text>
         </Paragraph>

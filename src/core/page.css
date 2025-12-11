@@ -1,11 +1,17 @@
 .page {
     position: relative;
     margin-top: 50vh;
-    margin-bottom: 50vh;
 
     min-height: 75vh;
 }
 
 .footer {
+    display: flex;
     height: 100vh;
+
+    justify-content: center;
+    
+    & * {
+        margin: auto
+    }
 }

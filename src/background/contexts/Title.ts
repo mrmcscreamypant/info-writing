@@ -4,6 +4,7 @@ import Context from "../Context";
 
 import { Entity } from '../Entity';
 import LightArray from '../LightArray';
+import { TeapotGeometry } from 'three/examples/jsm/geometries/TeapotGeometry.js';
 
 class TitleEntity extends Entity {
     declare public children: THREE.Mesh[];
@@ -17,11 +18,8 @@ class TitleEntity extends Entity {
 
         for (let i = 0; i < OBJECT_COUNT; i++) {
             this.add(new THREE.Mesh(
-                //new THREE.SphereGeometry(OBJECT_SIZE),
                 new THREE.BoxGeometry(OBJECT_SIZE, OBJECT_SIZE, OBJECT_SIZE),
-                new THREE.MeshPhysicalMaterial({
-                    metalness: 0.5
-                })
+                new THREE.MeshPhongMaterial()
             ));
         }
     }
@@ -32,7 +30,7 @@ class TitleEntity extends Entity {
             Math.sin(theta * (i / this.children.length) + this.time),
             Math.tan(theta + Math.sin(this.time * theta / 2)),
             Math.cos(theta + this.time)
-        );
+        ).multiplyScalar(1.5);
     }
 
     public tick(delta: number): void {
@@ -65,8 +63,4 @@ export default class TitleContext extends Context {
         this.title.tick(delta);
         this.lightArray.tick(delta);
     }
-
-    /*public override get cameraPos(): THREE.Vector3 {
-        return new THREE.Vector3;
-    }*/
 }

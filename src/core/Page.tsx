@@ -4,9 +4,16 @@ import './page.css';
 //import { ScrollRestoration } from 'react-router';
 import { Container } from '@radix-ui/themes';
 import { motion } from 'motion/react';
+import Paragraph from '../widgets/Paragraph';
+import AppLink, { AppLinkDirection } from '../widgets/AppLink';
+import { AppRoute } from '../AppRoutes';
 
 function Footer(): React.JSX.Element {
-    return <div className="footer">Footer</div>;
+    return <div className="footer">
+        <Paragraph>
+            <AppLink to={AppRoute.INDEX} direction={AppLinkDirection.BACKWARD} text="Back to home" />
+        </Paragraph>
+    </div>;
 }
 
 export default function Page({ children, noFooter }: { noFooter?: boolean } & React.PropsWithChildren): React.JSX.Element {
