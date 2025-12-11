@@ -36,7 +36,8 @@ export const enum CodeLanguage {
     JS = 'javascript',
     TS = 'typescript',
     PY = 'python',
-    HTML = 'html'
+    HTML = 'html',
+    YAML = 'yaml'
 }
 
 export default function CodeSample({ content, language = CodeLanguage.PY, file }: { content: string, language?: CodeLanguage, file?: string }): React.JSX.Element {

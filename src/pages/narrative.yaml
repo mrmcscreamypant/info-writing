@@ -39,7 +39,7 @@
     are generally synonymous), then there is no way I can possibly explain what I
     did in any meaningful way that you will understand. I am sorry. All of my attempts
     so far at doing so have wound up with "too many technical words". The way I brought a number of different concepts together (React,
-    THREE, vite, Github CI, yaml, etc.) in this makes it impossible (I really wish I
+    THREE, vite, Github CI, YAML, etc.) in this makes it impossible (I really wish I
     could use italics) for me to explain how they all work together <i>without</i>
     (see?) a highly technical explanation. The best example of this that I can think
     of is to ask someone who's first language is English (and who is not an English
@@ -73,6 +73,21 @@
     framework for creating webpages (in other words, a form of self-torture). I understand
     what is going on in the following file, but I doubt any explanation on my part will
     help you do so:
+
+- fig: entrypoint
+
+- content: |
+    This seven-line file kicks of this entire site, as it is technically single-page.
+    A little bit in (but outside of the part that handles switching between "pages"),
+    the whole background rendering engine gets initialized, which you saw at the start
+    of this "narrative".
+  
+- content: |
+    There is quite a lot going on still that I have neglected to mention, including the
+    fact that all of the text you are looking at is actually stored in a YAML file, which
+    allows me to pull this trick:
+
+- fig: thisIsNotInceptionThisIsFractalAndNotEven
 
 
 - content: |
