@@ -1,3 +1,9 @@
+- content: |
+    (A disclaimer before we begin: To anyone who actually understands some or all
+    of the concepts I am about to butcher explaining, please understand that I was
+    asked to make all of my rather simplified explanations of said things even more
+    simplistic. Sorry.)
+
 - title: Don't ask about the teapot
   content: |
     There is no teapot. The teapot does not spin as you scroll the page. Speaking
@@ -54,8 +60,19 @@
 - content: |
     This is the file from the source code, not the actual production site (read: the one
     you are currently looking at). This is for a number of reasons (which I am not going
-    to be able to explain), but topographically not much is different.
+    to be able to explain), but topographically not much is different. I am using a tool
+    called "vite" (which is French for "fast", which is it's own translation) to pack
+    the actual project files into a much more compact (and therefore faster to load over
+    the internet) form. This form is then automatically uploaded to a different site, which
+    the Google Site (which is probably the one you are looking at right now) is merely
+    mirroring. Leave out a bunch of iframe caching issues (I blame Google), and you have
+    a way to deploy a custom site for Google Sites.
 
+- content: |
+    The actual content of the site is actually rendered with React, which is a Javascript
+    framework for creating webpages (in other words, a form of self-torture). I understand
+    what is going on in the following file, but I doubt any explanation on my part will
+    help you do so:
 
 
 - content: |
