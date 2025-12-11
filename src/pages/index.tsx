@@ -8,7 +8,7 @@ import { Text } from '@radix-ui/themes';
 
 export default function Index(): React.JSX.Element {
     return <Page noFooter>
-        <Paragraph title="Hello Wold">
+        <Paragraph title="Hello World">
             <Text>There is quite a lot going on here</Text>
         </Paragraph>
         <Paragraph title="Helpful Buttons">
