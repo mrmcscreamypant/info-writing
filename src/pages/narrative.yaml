@@ -81,9 +81,9 @@
 
 - content: |
     This seven-line file kicks of this entire site, as it is technically single-page.
-    A little bit "deeper" (but outside of the part that handles switching between "pages"),
-    the whole background rendering engine gets initialized, which you saw at the start
-    of this "narrative".
+    A little bit "deeper" (but outside of the part that handles switching between
+    "pages"), the whole background rendering engine gets initialized, which you saw
+    at the start of this "narrative".
 
 - content: |
     There is quite a lot going on still that I have neglected to mention, including
@@ -106,10 +106,16 @@
 
 - content: |
     Given that this is for an "Informational Writing" course, and I have provided the
-    information in a form that people can (hopefully) understand, I suppose it is time
-    to wrap this up.
+    information in a form that people can (hopefully) understand, I suppose it is
+    time to wrap this up and commit.
 
 - fig: git
+
+- content: |
+    (I'm not an idiot, of course I've been committing this whole time. It just
+    triggers the 'build and publish' CI workflow. It also only took two commits to
+    set said workflow up, when it normally takes double digits. I'm getting better
+    at that, too)
 
 - content: |
     Also, not one teapot is on this site.
