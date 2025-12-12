@@ -38,9 +38,10 @@ class TitleEntity extends Entity {
 
         this.rotation.y += 0.3 * delta;
 
-
         for (let i = 0; i < this.children.length; i++) {
-            this.children[i].position.copy(this.cubePosition(i));
+            const child = this.children[i];
+            child.position.copy(this.cubePosition(i));
+            child.rotation.x += 0.1 * (i / this.children.length) * delta;
         }
     }
 }
