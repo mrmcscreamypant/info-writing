@@ -38,7 +38,7 @@ class TeapotEntity extends Entity {
         this.rotation.y += gValue;
         this.rotation.z += gValue * 0.5;
 
-        if (this.engine.hooks.scrollProgress.get() > 0.91) {
+        if (this.engine.hooks.scrollProgress.get() > 0.92) {
             if (!this.children.includes(this.hundreds)) {
                 this.add(this.hundreds);
             }

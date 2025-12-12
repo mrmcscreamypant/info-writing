@@ -69,7 +69,7 @@ export default class Engine {
     }
 
     private mainloop(): void {
-        const delta = Math.min(this.clock.getDelta(), 0.5);
+        const delta = Math.min(this.clock.getDelta(), 0.25);
         if (this.context) {
             this.context.tick(Math.min(0.5 * delta, 1));
         }
