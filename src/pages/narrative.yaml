@@ -97,6 +97,14 @@
 ###############################################
 
 - content: |
+    If you guessed that was the aforementioned YAML file for this document, you
+    would be correct. I wound up implementing the YAML loading system because
+    I wanted something a little more readable than pure JSX (if you don't know
+    what that is, all you need to know is that you can't read it), but parsing
+    markdown with Typescript is a whole can of worms I don't want to even think
+    about (though I did check if it was possible).
+
+- content: |
     Given that this is for an "Informational Writing" course, and I have provided the
     information in a form that people can (hopefully) understand, I suppose it is time
     to wrap this up.
