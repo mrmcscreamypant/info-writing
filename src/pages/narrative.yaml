@@ -81,7 +81,7 @@
 
 - content: |
     This seven-line file kicks of this entire site, as it is technically single-page.
-    A little bit in (but outside of the part that handles switching between "pages"),
+    A little bit "deeper" (but outside of the part that handles switching between "pages"),
     the whole background rendering engine gets initialized, which you saw at the start
     of this "narrative".
 
