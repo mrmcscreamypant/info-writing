@@ -25,7 +25,8 @@ class TeapotEntity extends Entity {
         for (let i = 0; i < this.INSTANCE_COUNT; i++) {
             const hundred = mesh.clone();
             hundred.scale.setScalar(0.1);
-            hundred.position.random().subScalar(0.5).multiplyScalar(10);
+            hundred.position.randomDirection().multiplyScalar((Math.random() + 0.1) * 8);
+            hundred.rotation.setFromVector3((new THREE.Vector3).random().multiplyScalar(Math.PI / 2));
             this.hundreds.add(hundred);
         }
     }
@@ -37,7 +38,7 @@ class TeapotEntity extends Entity {
         this.rotation.y += gValue;
         this.rotation.z += gValue * 0.5;
 
-        if (this.engine.hooks.scrollProgress.get() > 0.94) {
+        if (this.engine.hooks.scrollProgress.get() > 0.91) {
             if (!this.children.includes(this.hundreds)) {
                 this.add(this.hundreds);
             }
