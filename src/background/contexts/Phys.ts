@@ -19,7 +19,7 @@ class FallingObject extends THREE.Group {
         });
 
         physWorld.addBody(this.body);
-        this.body.position.set(this.randomOnAxis, 5, this.randomOnAxis);
+        this.body.position.set(this.randomOnAxis, 3, this.randomOnAxis);
 
         this.add(new THREE.Mesh(
             new THREE.BoxGeometry(0.2, 0.2, 0.2),
@@ -77,7 +77,7 @@ export default class PhysContext extends Context {
         this.cubes.reverse();
         this.add(n);
 
-        this.plane.position.y = this.engine.hooks.scrollSpring.get() / 1e3 - 1;
+        this.plane.position.y = this.engine.hooks.scrollSpring.get() / 5e3 - 1;
 
         for (const cube of this.cubes) cube.tick();
 

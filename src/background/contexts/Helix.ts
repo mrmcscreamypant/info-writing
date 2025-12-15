@@ -4,9 +4,8 @@ import Context from "../Context";
 
 import { Entity } from '../Entity';
 import LightArray from '../LightArray';
-import { TeapotGeometry } from 'three/examples/jsm/geometries/TeapotGeometry.js';
 
-class TitleEntity extends Entity {
+class HelixEntity extends Entity {
     declare public children: THREE.Mesh[];
     private time: number = 0;
 
@@ -46,14 +45,14 @@ class TitleEntity extends Entity {
     }
 }
 
-export default class TitleContext extends Context {
-    private readonly title: TitleEntity;
+export default class HelixContext extends Context {
+    private readonly title: HelixEntity;
     private readonly lightArray: LightArray;
 
     public constructor(engine: Engine) {
         super(engine);
 
-        this.title = new TitleEntity(this.engine);
+        this.title = new HelixEntity(this.engine);
         this.add(this.title);
 
         this.lightArray = new LightArray(this.engine);

@@ -2,12 +2,12 @@ import { AppRoute } from '../AppRoutes';
 import { ContextConstructor } from './Context';
 import PhysContext from './contexts/Phys';
 import TeapotContext from './contexts/Teapot';
-import TitleContext from './contexts/Title';
+import HelixContext from './contexts/Helix';
 
 export const ContextMappings: {
     [key in AppRoute]: ContextConstructor | null;
 } = {
-    "/": TitleContext,
+    "/": PhysContext,
     "/narrative": TeapotContext,
-    "/testing": PhysContext
+    "/testing": HelixContext
 };
