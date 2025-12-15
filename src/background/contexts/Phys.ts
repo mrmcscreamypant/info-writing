@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import * as CANNON from 'cannon-es';
 import Context from '../Context';
 import Engine from '../Engine';
+import LightArray from '../LightArray';
 
 class FallingObject extends THREE.Group {
     private readonly body: CANNON.Body;
@@ -20,7 +21,10 @@ class FallingObject extends THREE.Group {
         physWorld.addBody(this.body);
         this.body.position.set(this.randomOnAxis, 5, this.randomOnAxis);
 
-        this.add(new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.2, 0.2), new THREE.MeshNormalMaterial()));
+        this.add(new THREE.Mesh(
+            new THREE.BoxGeometry(0.2, 0.2, 0.2),
+            new THREE.MeshPhongMaterial()
+        ));
     }
 
     public tick(): void {
@@ -37,9 +41,13 @@ export default class PhysContext extends Context {
     private readonly physWorld: CANNON.World;
     private readonly cubes: FallingObject[];
     private readonly plane: CANNON.Body;
+    private readonly lightArray: LightArray;
 
     public constructor(engine: Engine) {
         super(engine);
+        
+        this.lightArray = new LightArray(this.engine);
+        this.add(this.lightArray);
 
         this.physWorld = new CANNON.World({
             gravity: new CANNON.Vec3(0, -9.82, 0)
@@ -69,8 +77,10 @@ export default class PhysContext extends Context {
         this.cubes.reverse();
         this.add(n);
 
-        this.plane.position.y = this.engine.hooks.scrollVelocity.get() / 2.5e4 - 1;
+        this.plane.position.y = this.engine.hooks.scrollSpring.get() / 1e3 - 1;
 
         for (const cube of this.cubes) cube.tick();
+
+        this.lightArray.tick(delta);
     }
 }

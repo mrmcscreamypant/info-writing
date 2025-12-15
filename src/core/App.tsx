@@ -3,7 +3,7 @@ import './app.css';
 import AppRoutes from '../AppRoutes';
 import "@radix-ui/themes/styles.css";
 import Background from '../background/Background';
-import { AnimatePresence, useScroll, useVelocity } from 'motion/react';
+import { AnimatePresence, useScroll, useSpring, useVelocity } from 'motion/react';
 import { EngineHooks } from '../background/Engine';
 import { Theme } from '@radix-ui/themes';
 import { Location } from 'react-router';
@@ -17,6 +17,7 @@ export function App(): React.JSX.Element {
     const engineHooks: EngineHooks = {
         scrollProgress: scrollYProgress,
         scrollVelocity: useVelocity(scrollY),
+        scrollSpring: useSpring(useVelocity(scrollY)),
         currentPage
     };
 

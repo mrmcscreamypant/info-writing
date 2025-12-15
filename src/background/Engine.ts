@@ -9,6 +9,7 @@ import { AppRoute } from '../AppRoutes';
 export type EngineHooks = {
     scrollProgress: MotionValue<number>,
     scrollVelocity: MotionValue<number>,
+    scrollSpring: MotionValue<number>,
     currentPage: Location
 }
 
