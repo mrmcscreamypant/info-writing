@@ -6,6 +6,7 @@ import Narrative from './pages/Narrative';
 export const enum AppRoute {
     INDEX = "/",
     NARRATIVE = "/narrative",
+    TESTING = "/testing"
 }
 
 type SetCurrentPageProps = { setCurrentPage: (value: Location) => void };
@@ -23,6 +24,7 @@ export default function AppRoutes({ setCurrentPage }: SetCurrentPageProps): Reac
         <Routes>
             <Route path={AppRoute.INDEX} element={<Index />} />
             <Route path={AppRoute.NARRATIVE} element={<Narrative />} />
+            <Route path={AppRoute.TESTING} element={<Index />} />
         </Routes>
         <LocationUpdater setCurrentPage={setCurrentPage} />
     </HashRouter>;
