@@ -13,10 +13,10 @@
 - content: |
     Before you drive yourself insane trying to replicate this, this was not
     (entirely) made in Google Sites. This whole project is a culmination of
-    several of my particular skill sets, and my mess of poorly (un)documented
-    but heavily type-checked (one of the reasons that typescript is infinitely
-    better) spaghetti code is probably inscrutable to everyone but me. Here's
-    a sample:
+    several of my particular skill sets, and my mess of poorly (completely
+    un)documented but heavily type-checked (one of the reasons that typescript
+    is infinitely better) spaghetti code is probably inscrutable to everyone but
+    me. Here's a sample:
 
 - fig: spaghetti
 
