@@ -19,7 +19,12 @@ export default function Narrative(): React.JSX.Element {
             knowledge: <AppImage
                 src="https://imgs.xkcd.com/comics/average_familiarity.png"
                 credit={xkcdCredit}
-                caption="Sorry if this is the case. I have to keep reminding myself that most people don't know what functions are."
+                caption="Sorry if this is the case."
+            />,
+            ignorance: <AppImage
+                src="https://imgs.xkcd.com/comics/computer_problems.png"
+                credit={xkcdCredit}
+                caption="This is relevent somehow. I just think it is funny."
             />,
             html: <CodeSample
                 content={htmlCodeSample}
