@@ -24,7 +24,7 @@ export default function Narrative(): React.JSX.Element {
             ignorance: <AppImage
                 src="https://imgs.xkcd.com/comics/computer_problems.png"
                 credit={xkcdCredit}
-                caption="This is relevent somehow. I just think it is funny."
+                caption="This is probably relevent somehow. I just think it is funny."
             />,
             html: <CodeSample
                 content={htmlCodeSample}
