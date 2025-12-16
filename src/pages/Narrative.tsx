@@ -10,7 +10,7 @@ import spaghettiCodeSample from '../background/Engine?raw';
 import htmlCodeSample from '../../index.html?raw';
 import entrypointCodeSample from '../index?raw';
 
-const xkcdCredit = "Image credit: xkcd.com";
+const xkcdCredit = "Source: xkcd.com (Creative Commons Attribution-NonCommercial 2.5)";
 
 export default function Narrative(): React.JSX.Element {
     return <Page>
@@ -19,7 +19,7 @@ export default function Narrative(): React.JSX.Element {
             knowledge: <AppImage
                 src="https://imgs.xkcd.com/comics/average_familiarity.png"
                 credit={xkcdCredit}
-                caption="Sorry if this is the case."
+                caption="Sorry if this is the case. I have to keep reminding myself that most people don't know what functions are."
             />,
             html: <CodeSample
                 content={htmlCodeSample}
