@@ -21,7 +21,7 @@
 - fig: spaghetti
 
 - content: |
-    Honestly, that is not even the worse one. It's not even a tsx file. The code
+    Honestly, that is not even the worst one. It's not even a tsx file. The code
     in question handles the rendering of [NO TEAPOTS WHATSOEVER] on background of
     the site. I'm making use of a library called THREE.js for the actual 3D rendering,
     as the actual math and algorithms that go into 3D graphics go well over my head.
@@ -49,7 +49,7 @@
 
 - content: |
     (That wasn't really the best example but your reaction was too funny to pass up;
-    Alternatively, try "hyponym", which is probably makes for a better analogy).
+    Alternatively, try "hyponym", which probably makes for a better analogy).
 
 - fig: ignorance
 
@@ -66,7 +66,7 @@
     This is the file from the source code, not the actual production site (read: the one
     you are currently looking at). This is for a number of reasons (which I am not going
     to be able to explain), but topographically not much is different. I am using a tool
-    called "vite" (which is French for "fast", which is it's own translation) to pack
+    called "vite" (which is French for "fast", which is its own translation) to pack
     the actual project files into a much more compact (and therefore faster to load over
     the internet) form. This form is then automatically uploaded to a different site,
     which the Google Site (which is probably the one you are looking at right now) is
@@ -82,7 +82,7 @@
 - fig: entrypoint
 
 - content: |
-    This seven-line file kicks of this entire site, as it is technically single-page.
+    This seven-line file kicks off this entire site, as it is technically single-page.
     A little bit "deeper" (but outside of the part that handles switching between
     "pages"), the whole background rendering engine gets initialized, which you saw
     at the start of this "narrative".
