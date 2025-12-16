@@ -10,7 +10,7 @@ import spaghettiCodeSample from '../background/Engine?raw';
 import htmlCodeSample from '../../index.html?raw';
 import entrypointCodeSample from '../index?raw';
 
-const xkcdCredit = "Source: xkcd.com (Creative Commons Attribution-NonCommercial 2.5)";
+const xkcdCredit = "Comic by Randall Munroe, xkcd.com (Creative Commons Attribution-NonCommercial 2.5)";
 
 export default function Narrative(): React.JSX.Element {
     return <Page>
@@ -18,7 +18,7 @@ export default function Narrative(): React.JSX.Element {
             spaghetti: <CodeSample content={spaghettiCodeSample} language={CodeLanguage.TS} file='Engine.ts' />,
             knowledge: <AppImage
                 src="https://imgs.xkcd.com/comics/average_familiarity.png"
-                credit={xkcdCredit}
+                credit={xkcdCredit + " (I hope this is correct)"}
                 caption="Sorry if this is the case."
             />,
             ignorance: <AppImage
