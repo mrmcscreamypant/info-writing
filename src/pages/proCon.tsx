@@ -13,7 +13,7 @@ export default function ProConPage(): React.JSX.Element {
             python: <AppImage
                 src="https://imgs.xkcd.com/comics/python.png"
                 credit={xkcdCredit}
-                caption='Fun Fact: python actually has the "antigravity" module, which - when imported - opens up this comic in a webbrowser'
+                caption='Fun Fact: python actually has the "antigravity" module, which - when imported - opens up this comic in a webbrowser. This comic uses python 2, so the print statement is out of date.'
             />
         }} />
     </Page>;
