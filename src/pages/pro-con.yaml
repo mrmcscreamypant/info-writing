@@ -1,0 +1,37 @@
+- title: DISCLAIMER
+  content: |
+    I taught myself to program. The vast majority of my knowledge and
+    techniques are either from library books, or random internet searches.
+    I have absolutely no idea what I am talking about most of the time,
+    and anything I say should be taken with a grain of salt of significant
+    size.
+
+- title: ANOTHER DISCLAIMER
+  content: |
+    I don't know C, or C+, or C++, or C#, or C*, or Cg, or D, or E (all of
+    those are real programming languages, according to Wikipedia). I also
+    have no pressing need to learn any or all of the above any time soon.
+    I do use Debian linux, if that helps (if you don't know what that is,
+    you are not going to understand my explanation, sorry).
+
+- title: YET ANOTHER DISCLAIMER THAT I UNFORTUNATELY HAVE TO INCLUDE.
+  content: |
+    I don't use LLMs to write code. Depending on what kind of person you are,
+    you either agree with me, or will deny any evidence I present (or just not
+    care, shame on you).
+
+- title: What you came here for
+  content: |
+    This is NOT a ranked list of the "best" programming languages (depending
+    on who you ask, either some variant of C or python would be at the top of
+    said list). I firmly believe there is no "best" programming language,
+    especially if you factor in the particular scenario (e.g. python is not
+    good for making a game in a browser (I learned that the hard way)).
+    Instead I am going to provide a list of (what I think) are the pros and
+    cons of each language.
+
+- title: What you ACTUALLY came here for
+  content: |
+    Without any further ado:
+
+- fig: python

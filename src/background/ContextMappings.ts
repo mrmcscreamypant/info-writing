@@ -9,5 +9,5 @@ export const ContextMappings: {
 } = {
     "/": PhysContext,
     "/narrative": TeapotContext,
-    "/testing": HelixContext
+    "/pro-con": HelixContext
 };
