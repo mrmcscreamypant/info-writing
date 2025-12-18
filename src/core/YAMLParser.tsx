@@ -26,19 +26,39 @@ function DefinitionList({ defs }: { defs: Def[] }): React.JSX.Element {
         onHoverEnd={() => setDefHovered(false)}
         style={{
             minWidth: "20%",
-            maxWidth: "20%",
+
+            minHeight: "50%",
             maxHeight: "100%",
-            minHeight: "100%",
+
             alignContent: "center",
             textAlign: "center",
-            marginLeft: "2px"
+
+            marginLeft: "8px",
+            position: "relative",
+            zIndex: 100
+        }}
+        initial={{
+            width: "10%"
+        }}
+        whileHover={{
+            width: "70%"
         }}
     >
-        {defHovered ? <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-        >
-            <Card>
+        {defHovered ? <Card asChild>
+            <motion.div
+                initial={{
+                    opacity: 0
+                }}
+                animate={{
+                    opacity: 1
+                }}
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    width: "100%",
+                    right: 0
+                }}
+            >
                 {defs.flatMap(
                     (def, j: number) => <Definition
                         key={j}
@@ -46,10 +66,8 @@ function DefinitionList({ defs }: { defs: Def[] }): React.JSX.Element {
                         meaning={def.meaning}
                     />
                 )}
-            </Card>
-        </motion.div> : <IconButton radius="full">
-            <Icons.AccessibilityIcon width="18" height="18" />
-        </IconButton>}
+            </motion.div>
+        </Card> : <Icons.InfoCircledIcon width="18" height="18" />}
     </motion.div>;
 }
 
@@ -58,8 +76,10 @@ export default function YAMLParser({ markup, figs }: { markup: string, figs?: { 
 
     return content.flatMap(
         (paragraph, i: number) => <Paragraph key={i} title={paragraph.title}>
-            <Flex>
-                {paragraph.fig ? figs[paragraph.fig] : <Text>{paragraph.content}</Text>}
+            <Flex flexGrow={"1"}>
+                {paragraph.fig ? figs[paragraph.fig] : <Text style={{
+                    width: "90%"
+                }}>{paragraph.content}</Text>}
                 {paragraph.defs && <DefinitionList defs={paragraph.defs} />}
             </Flex>
         </Paragraph >

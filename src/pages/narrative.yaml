@@ -74,7 +74,8 @@
       meaning: |
         One of those horrible things that are supposed to be "temporary" and
         now are so important and fundamental that removing them would be
-        impossible. CSS is just as bad. Neither are programming languages.
+        impossible. No matter what anyone tells you, it is NOT a programming
+        language.
 
 - fig: html
 
@@ -97,7 +98,7 @@
   defs:
     - term: React
       meaning:
-        Pure witchcraft.
+        As I said, a form of self-torture.
 
 - fig: entrypoint
 
