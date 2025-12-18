@@ -14,7 +14,7 @@ type YAMLPage = YAMLParagraph[];
 function Definition({ term, meaning }: Def): React.JSX.Element {
     return <>
         <Badge>{term}</Badge><br />
-        <Text size="2">{meaning}</Text>
+        <Text size="2">{meaning}</Text><br />
     </>;
 }
 
@@ -26,6 +26,7 @@ function DefinitionList({ defs }: { defs: Def[] }): React.JSX.Element {
         onHoverEnd={() => setDefHovered(false)}
         style={{
             minWidth: "20%",
+            maxWidth: "20%",
             maxHeight: "100%",
             minHeight: "100%",
             alignContent: "center",

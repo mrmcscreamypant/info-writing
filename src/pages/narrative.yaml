@@ -17,11 +17,17 @@
     un)documented but heavily type-checked (one of the reasons that typescript
     is infinitely better) spaghetti code is probably inscrutable to everyone but
     me. Here's a sample:
+  defs:
+    - term: "spaghetti code"
+      meaning: |
+        Code that is so horribly architected that a graphical representation
+        would look like a plate of spaghetti. Arguably the best way to
+        write code.
 
 - fig: spaghetti
 
 - content: |
-    Honestly, that is not even the worst one. It's not even a tsx file. The code
+    Honestly, that is not even the worst one. It's not even a *.tsx file. The code
     in question handles the rendering of [NO TEAPOTS WHATSOEVER] on background of
     the site. I'm making use of a library called THREE.js for the actual 3D rendering,
     as the actual math and algorithms that go into 3D graphics go well over my head.
@@ -63,6 +69,12 @@
   content: |
     As with most things on the internet, it starts with a HTML file. This HTML file, 
     to be specific:
+  defs:
+    - term: HTML
+      meaning: |
+        One of those horrible things that are supposed to be "temporary" and
+        now are so important and fundamental that removing them would be
+        impossible. CSS is just as bad. Neither are programming languages.
 
 - fig: html
 
@@ -82,6 +94,10 @@
     Javascript (but Typescript-compatible) framework for creating webpages (in other
     words, a form of self-torture). I understand what is going on in the following
     file, but I doubt any explanation on my part will help you do so:
+  defs:
+    - term: React
+      meaning:
+        Pure witchcraft.
 
 - fig: entrypoint
 
@@ -95,6 +111,12 @@
     There is quite a lot going on still that I have neglected to mention, including
     the fact that all of the text you are looking at is actually stored in a YAML
     file, which allows me to pull this trick:
+  defs:
+    - term: YAML
+      meaning: |
+        Either Yet Another Markup Language, or Yaml Ain't Markup Language, depending
+        on who you ask. It is a way of storing common data structures in a human
+        (programmer) readable format.
 
 - fig: thisIsNotInceptionThisIsFractalAndNotEven
 
@@ -105,10 +127,19 @@
 - content: |
     If you guessed that was the aforementioned YAML file for this document, you
     would be correct. I wound up implementing the YAML loading system because
-    I wanted something a little more readable than pure JSX (if you don't know
-    what that is, all you need to know is that you can't read it), but parsing
+    I wanted something a little more readable than pure JSX, but parsing
     markdown with Typescript is a whole can of worms I don't want to even think
     about (though I did check if it was possible).
+  defs:
+    - term: Markdown
+      meaning: |
+        A simplistic format for creating documents. I'm 23% sure that Google
+        Docs uses it under the hood.
+    - term: JSX / TSX
+      meaning:
+        I don't actually know what it stands for, but it is essentially a
+        Javascript (or Typescript) file with HTML spliced into it. That
+        is just as cursed as it sounds.
 
 - content: |
     Given that this is for an "Informational Writing" course, and I have provided the
