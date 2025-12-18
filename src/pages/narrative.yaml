@@ -9,10 +9,6 @@
     There is no teapot. The teapot does not spin as you scroll the page. Speaking
     of scrolling the page, the text does not do something weird as you do so. You
     are just seeing things. This was made in a perfectly normal way in Google Sites.
-  def:
-    - term: teapot
-      meaning: |
-        This is a test
 
 - content: |
     Before you drive yourself insane trying to replicate this, this was not
@@ -50,6 +46,10 @@
     a highly technical explanation. The best example of this that I can think of is
     to ask someone who's first language is English (and who is not an English major)
     for the definition of "adnoun".
+  defs:
+    - term: adnoun
+      meaning: |
+        You should know this!
 
 - content: |
     (That wasn't really the best example but your reaction was too funny to pass up;
