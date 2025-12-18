@@ -114,6 +114,9 @@
     Given that this is for an "Informational Writing" course, and I have provided the
     information in a form that people can (hopefully) understand, I suppose it is
     time to wrap this up and commit.
+  defs:
+    - term: commit
+      meaning: A way of saving your work. Coincidentally an adnoun.
 
 - fig: git
 

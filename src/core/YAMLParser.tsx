@@ -14,7 +14,7 @@ type YAMLPage = YAMLParagraph[];
 function Definition({ term, meaning }: Def): React.JSX.Element {
     return <>
         <Badge>{term}</Badge><br />
-        <Text>{meaning}</Text>
+        <Text size="2">{meaning}</Text>
     </>;
 }
 
@@ -29,7 +29,8 @@ function DefinitionList({ defs }: { defs: Def[] }): React.JSX.Element {
             maxHeight: "100%",
             minHeight: "100%",
             alignContent: "center",
-            textAlign: "center"
+            textAlign: "center",
+            marginLeft: "2px"
         }}
     >
         {defHovered ? <motion.div
