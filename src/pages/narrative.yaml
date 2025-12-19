@@ -34,6 +34,15 @@
     All the file (technically the class contained within) does is setup the rendering
     loop and handle the camera motion between pages. Also, the glitch postprocessing
     effect is intentional.
+  defs:
+    - term: library
+      meaning: |
+        Code that is written to be used with other code to do something. This is so
+        that programmers don't have to rewrite everything from the ground up for
+        a new project.
+    - term: rendering
+      meaning: |
+        The act of pushing graphics to the screen.
 
 - title: How I made this
   content: |
@@ -55,7 +64,7 @@
   defs:
     - term: adnoun
       meaning: |
-        You should know this!
+        You should know this! (according to your English teacher).
 
 - content: |
     (That wasn't really the best example but your reaction was too funny to pass up;
@@ -93,8 +102,7 @@
 - content: |
     The actual content of the site is actually rendered with React, which is a
     Javascript (but Typescript-compatible) framework for creating webpages (in other
-    words, a form of self-torture). I understand what is going on in the following
-    file, but I doubt any explanation on my part will help you do so:
+    words, a form of self-torture). Behold:
   defs:
     - term: React
       meaning:
@@ -103,7 +111,7 @@
 - fig: entrypoint
 
 - content: |
-    This seven-line file kicks off this entire site, as it is technically single-page.
+    That seven-line file kicks off this entire site, as it is technically single-page.
     A little bit "deeper" (but outside of the part that handles switching between
     "pages"), the whole background rendering engine gets initialized, which you saw
     at the start of this "narrative".

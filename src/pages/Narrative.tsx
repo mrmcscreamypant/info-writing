@@ -19,7 +19,7 @@ export default function Narrative(): React.JSX.Element {
             knowledge: <AppImage
                 src="https://imgs.xkcd.com/comics/average_familiarity.png"
                 credit={xkcdCredit + " (I hope this is correct)"}
-                caption="Sorry if this is the case."
+                caption="Sorry if this is the case. I have to keep reminding myself that most people don't know what variables or functions are."
             />,
             ignorance: <AppImage
                 src="https://imgs.xkcd.com/comics/computer_problems.png"
