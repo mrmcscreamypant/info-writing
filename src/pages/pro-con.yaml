@@ -35,3 +35,15 @@
     Without any further ado:
 
 - fig: python
+
+- content: |
+    For the record, the comic is slightly out of date. The print statement is
+    only valid in python 2. In python 3 (the version that I know), it would be:
+
+- fig: python3
+
+- content: |
+    ... as opposed to java (don't worry, we'll get to that later), which looks
+    something like this:
+
+- fig: verboseJava
