@@ -7,15 +7,14 @@ import AppImage from '../widgets/AppImage';
 import CodeSample, { CodeLanguage } from '../widgets/CodeSample';
 
 import verboseJavaSample from './codeSamples/HelloWorld.java?raw';
-
-const xkcdCredit = "Comic by Randall Munroe, xkcd.com (Creative Commons Attribution-NonCommercial 2.5)";
+import XKCDCredit from './XKCDCredit';
 
 export default function ProConPage(): React.JSX.Element {
     return <Page>
         <YAMLParser markup={document} figs={{
             python: <AppImage
                 src="https://imgs.xkcd.com/comics/python.png"
-                credit={xkcdCredit}
+                credit={<XKCDCredit />}
                 caption='Fun Fact: python actually has the "antigravity" module, which - when imported - opens up this comic in a webbrowser.'
             />,
             python3: <CodeSample content='print("Hello, world!")' language={CodeLanguage.PY} file='helloWorld.py' />,
