@@ -6,20 +6,6 @@
     and anything I say should be taken with a grain of salt of significant
     size.
 
-- title: ANOTHER DISCLAIMER
-  content: |
-    I don't know C, or C+, or C++, or C#, or C*, or Cg, or D, or E (all of
-    those are real programming languages, according to Wikipedia). I also
-    have no pressing need to learn any or all of the above any time soon.
-    I do use Debian linux, if that helps (if you don't know what that is,
-    you are not going to understand my explanation, sorry).
-
-- title: YET ANOTHER DISCLAIMER THAT I UNFORTUNATELY HAVE TO INCLUDE.
-  content: |
-    I don't use LLMs to write code. Depending on what kind of person you are,
-    you either agree with me, or will deny any evidence I present (or just not
-    care, shame on you).
-
 - title: What you came here for
   content: |
     This is NOT a ranked list of the "best" programming languages (depending
@@ -43,7 +29,71 @@
 - fig: python3
 
 - content: |
-    ... as opposed to java (don't worry, we'll get to that later), which looks
-    something like this:
+    This is still ludicrously simple compared to some other languages I might
+    mention (Java). Python was the first text-based program language I
+    learned, so I <i>might</i> be a little bit biased, but it is easy to learn,
+    and very extensible (there is quite literally a library for everything).
+    It is also object-oriented, though in a rather cursed way. It also completely
+    lacks access modifiers outside of naming conventions and name mangling.
+  defs:
+    - term: object-oriented  
+      meaning: |
+        Object Oriented Programming (or OOP for short) is a rather advanced way
+        of structuring code that is rather powerful. Instead of there being
+        one giant "application" that stores all of the data and all of the code,
+        it instead splits everything up into "objects", which are defined in
+        "classes". Java is entirely object-oriented, while others - such as Python
+        - it is optional.
+    - term: name mangling
+      meaning: |
+        The less said about it the better. It's a horribly hacked together solution
+        to a problem that could have been solved in a better way.
+
+- content: |
+    It also has issues with performance, considering that it's an interpreted
+    language, which allows for some rather "interesting" tricks. It is a good
+    language for starting out, but has some quirks that make it a little
+    painful for someone who likes consistency in how things work.
+  defs:
+    - term: interpreted language
+      meaning: |
+        When a computer runs a program written in an interpreted language, it "parses"
+        (figures out what the instruction says to do) when it reaches that line of
+        code. For a number of rather technical reasons, this method is slower than
+        "compiled" languages (such as Java and Typescript (which technically
+        compiles to Javascript, which is in itself a Just In Time (JIT) language,
+        where the computer compiles a line of code the first time it is called)),
+        where the code is converted into instructions that can run directly on
+        the processor.
+  
+- content: |
+    Beware the circular imports!
+
+- title: Java
+  content: |
+    I have only started learning Java this year, for the AP Computer Science
+    Applications elective. It's... ok.
+  
+- content: |
+    Remember how simple the Python "Hello World" program was? Here is the exact
+    same thing in Java:
 
 - fig: verboseJava
+
+- content: |
+    In Java, OOP is not recommended, its mandatory. Everything is a class (or
+    an interface, or an enum, all of which are still just classes). It is also
+    a compiled language, which means there are no circular import errors, and it
+    can run terrifyingly fast, but also is rather restrictive. Typing is also
+    mandatory, constructors don't inherit, and functions with default arguments
+    have to be redefined each time.
+
+- content: |
+    It also feels like every time I start to get used to its quirks, it throws
+    another one at me. For example, the default modulo operator (%) does not
+    do what it should with negative numbers. At all. Use
+    java.lang.Math.floorMod() instead.
+  defs:
+    - term: modulo
+      meaning: |
+        Ask a math teacher if you don't remember it from eighth grade.
