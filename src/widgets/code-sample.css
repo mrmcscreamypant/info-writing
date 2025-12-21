@@ -2,3 +2,11 @@
     display: flex;
     height: 100%;
 }
+
+.monaco-editor .overflow-guard  {
+    z-index: 1;
+}
+
+.monaco-editor .overflowingContentWidget  {
+    z-index: 3;
+}

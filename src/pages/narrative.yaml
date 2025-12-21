@@ -17,17 +17,32 @@
     un)documented but heavily type-checked (one of the reasons that typescript
     is infinitely better) spaghetti code is probably inscrutable to everyone but
     me. Here's a sample:
+  defs:
+    - term: "spaghetti code"
+      meaning: |
+        Code that is so horribly architected that a graphical representation
+        would look like a plate of spaghetti. Arguably the best way to
+        write code.
 
 - fig: spaghetti
 
 - content: |
-    Honestly, that is not even the worst one. It's not even a tsx file. The code
+    Honestly, that is not even the worst one. It's not even a *.tsx file. The code
     in question handles the rendering of [NO TEAPOTS WHATSOEVER] on background of
     the site. I'm making use of a library called THREE.js for the actual 3D rendering,
     as the actual math and algorithms that go into 3D graphics go well over my head.
     All the file (technically the class contained within) does is setup the rendering
     loop and handle the camera motion between pages. Also, the glitch postprocessing
     effect is intentional.
+  defs:
+    - term: library
+      meaning: |
+        Code that is written to be used with other code to do something. This is so
+        that programmers don't have to rewrite everything from the ground up for
+        a new project.
+    - term: rendering
+      meaning: |
+        The act of pushing graphics to the screen.
 
 - title: How I made this
   content: |
@@ -46,6 +61,10 @@
     a highly technical explanation. The best example of this that I can think of is
     to ask someone who's first language is English (and who is not an English major)
     for the definition of "adnoun".
+  defs:
+    - term: adnoun
+      meaning: |
+        You should know this! (according to your English teacher).
 
 - content: |
     (That wasn't really the best example but your reaction was too funny to pass up;
@@ -59,6 +78,13 @@
   content: |
     As with most things on the internet, it starts with a HTML file. This HTML file, 
     to be specific:
+  defs:
+    - term: HTML
+      meaning: |
+        One of those horrible things that are supposed to be "temporary" and
+        now are so important and fundamental that removing them would be
+        impossible. No matter what anyone tells you, it is NOT a programming
+        language.
 
 - fig: html
 
@@ -76,13 +102,16 @@
 - content: |
     The actual content of the site is actually rendered with React, which is a
     Javascript (but Typescript-compatible) framework for creating webpages (in other
-    words, a form of self-torture). I understand what is going on in the following
-    file, but I doubt any explanation on my part will help you do so:
+    words, a form of self-torture). Behold:
+  defs:
+    - term: React
+      meaning:
+        As I said, a form of self-torture.
 
 - fig: entrypoint
 
 - content: |
-    This seven-line file kicks off this entire site, as it is technically single-page.
+    That seven-line file kicks off this entire site, as it is technically single-page.
     A little bit "deeper" (but outside of the part that handles switching between
     "pages"), the whole background rendering engine gets initialized, which you saw
     at the start of this "narrative".
@@ -91,6 +120,12 @@
     There is quite a lot going on still that I have neglected to mention, including
     the fact that all of the text you are looking at is actually stored in a YAML
     file, which allows me to pull this trick:
+  defs:
+    - term: YAML
+      meaning: |
+        Either Yet Another Markup Language, or Yaml Ain't Markup Language, depending
+        on who you ask. It is a way of storing common data structures in a human
+        (programmer) readable format.
 
 - fig: thisIsNotInceptionThisIsFractalAndNotEven
 
@@ -101,15 +136,27 @@
 - content: |
     If you guessed that was the aforementioned YAML file for this document, you
     would be correct. I wound up implementing the YAML loading system because
-    I wanted something a little more readable than pure JSX (if you don't know
-    what that is, all you need to know is that you can't read it), but parsing
+    I wanted something a little more readable than pure JSX, but parsing
     markdown with Typescript is a whole can of worms I don't want to even think
     about (though I did check if it was possible).
+  defs:
+    - term: Markdown
+      meaning: |
+        A simplistic format for creating documents. I'm 23% sure that Google
+        Docs uses it under the hood.
+    - term: JSX / TSX
+      meaning:
+        I don't actually know what it stands for, but it is essentially a
+        Javascript (or Typescript) file with HTML spliced into it. That
+        is just as cursed as it sounds.
 
 - content: |
     Given that this is for an "Informational Writing" course, and I have provided the
     information in a form that people can (hopefully) understand, I suppose it is
     time to wrap this up and commit.
+  defs:
+    - term: commit
+      meaning: A way of saving your work. Coincidentally an adnoun.
 
 - fig: git
 
