@@ -15,6 +15,7 @@ export default function ProConPage(): React.JSX.Element {
             python: <AppImage
                 src="https://imgs.xkcd.com/comics/python.png"
                 credit={<XKCDCredit />}
+                attributionLink='https://xkcd.com/353/'
                 caption='Fun Fact: python actually has the "antigravity" module, which - when imported - opens up this comic in a webbrowser.'
             />,
             python3: <CodeSample content='print("Hello, world!")' language={CodeLanguage.PY} file='helloWorld.py' />,

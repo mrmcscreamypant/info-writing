@@ -85,8 +85,8 @@
     an interface, or an enum, all of which are still just classes). It is also
     a compiled language, which means there are no circular import errors, and it
     can run terrifyingly fast, but also is rather restrictive. Typing is also
-    mandatory, constructors don't inherit, and functions with default arguments
-    have to be redefined each time.
+    mandatory, constructors don't inherit, and functions with optional arguments
+    have to be redefined for each possible case.
 
 - content: |
     It also feels like every time I start to get used to its quirks, it throws
