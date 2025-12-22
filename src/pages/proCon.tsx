@@ -8,6 +8,7 @@ import CodeSample, { CodeLanguage } from '../widgets/CodeSample';
 
 import verboseJavaSample from './codeSamples/HelloWorld.java?raw';
 import XKCDCredit from './XKCDCredit';
+import Desmos, { DesmosType } from '../widgets/Desmos';
 
 export default function ProConPage(): React.JSX.Element {
     return <Page>
@@ -19,7 +20,8 @@ export default function ProConPage(): React.JSX.Element {
                 caption='Fun Fact: python actually has the "antigravity" module, which - when imported - opens up this comic in a webbrowser.'
             />,
             python3: <CodeSample content='print("Hello, world!")' language={CodeLanguage.PY} file='helloWorld.py' />,
-            verboseJava: <CodeSample content={verboseJavaSample} language={CodeLanguage.JAVA} file='App.java' />
+            verboseJava: <CodeSample content={verboseJavaSample} language={CodeLanguage.JAVA} file='App.java' />,
+            desmos: <Desmos type={DesmosType.GEOMETRY} slug="k5sggcr7rn" />
         }} />
     </Page>;
 }
