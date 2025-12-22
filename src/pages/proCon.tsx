@@ -21,7 +21,10 @@ export default function ProConPage(): React.JSX.Element {
             />,
             python3: <CodeSample content='print("Hello, world!")' language={CodeLanguage.PY} file='helloWorld.py' />,
             verboseJava: <CodeSample content={verboseJavaSample} language={CodeLanguage.JAVA} file='App.java' />,
-            desmos: <Desmos type={DesmosType.GEOMETRY} slug="k5sggcr7rn" />
+            desmos: <Desmos type={DesmosType.GEOMETRY} slug="k5sggcr7rn" />,
+            cheating: <Desmos type={DesmosType.CALCULATOR} slug="nzvkdo6syz" embed />,
+            pong: <Desmos type={DesmosType.CALCULATOR} slug="htebducdvg" embed />,
+            dyson: <Desmos type={DesmosType.THREED} slug="byji8toyc9" />
         }} />
     </Page>;
 }
