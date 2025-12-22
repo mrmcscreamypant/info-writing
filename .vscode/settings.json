@@ -4,6 +4,8 @@
         ".github/workflows/static.yml"
     ],
     "cSpell.words": [
+        "Desmos",
+        "MCAS",
         "vite"
     ]
 }

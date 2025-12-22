@@ -2,11 +2,12 @@ import React from 'react';
 import { HashRouter, Location, Route, Routes, useLocation } from 'react-router';
 import Index from './pages';
 import Narrative from './pages/Narrative';
+import ProConPage from './pages/proCon';
 
 export const enum AppRoute {
     INDEX = "/",
     NARRATIVE = "/narrative",
-    TESTING = "/testing"
+    PRO_CON = "/pro-con"
 }
 
 type SetCurrentPageProps = { setCurrentPage: (value: Location) => void };
@@ -24,7 +25,7 @@ export default function AppRoutes({ setCurrentPage }: SetCurrentPageProps): Reac
         <Routes>
             <Route path={AppRoute.INDEX} element={<Index />} />
             <Route path={AppRoute.NARRATIVE} element={<Narrative />} />
-            <Route path={AppRoute.TESTING} element={<Index />} />
+            <Route path={AppRoute.PRO_CON} element={<ProConPage />} />
         </Routes>
         <LocationUpdater setCurrentPage={setCurrentPage} />
     </HashRouter>;

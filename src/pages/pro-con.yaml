@@ -1,0 +1,148 @@
+- title: DISCLAIMER
+  content: |
+    I taught myself to program. The vast majority of my knowledge and
+    techniques are either from library books, or random internet searches.
+    I have absolutely no idea what I am talking about most of the time,
+    and anything I say should be taken with a grain of salt of significant
+    size.
+
+- title: What you came here for
+  content: |
+    This is NOT a ranked list of the "best" programming languages (depending
+    on who you ask, either some variant of C or python would be at the top of
+    said list). I firmly believe there is no "best" programming language,
+    especially if you factor in the particular scenario (e.g. python is not
+    good for making a game in a browser (I learned that the hard way)).
+    Instead I am going to provide a list of (what I think) are the pros and
+    cons of each language.
+
+- title: What you ACTUALLY came here for
+  content: |
+    Without any further ado:
+
+- fig: python
+
+- content: |
+    For the record, the comic is slightly out of date. The print statement is
+    only valid in python 2. In python 3 (the version that I know), it would be:
+
+- fig: python3
+
+- content: |
+    This is still ludicrously simple compared to some other languages I might
+    mention (Java). Python was the first text-based program language I
+    learned, so I <i>might</i> be a little bit biased, but it is easy to learn,
+    and very extensible (there is quite literally a library for everything).
+    It is also object-oriented, though in a rather cursed way. It also completely
+    lacks access modifiers outside of naming conventions and name mangling.
+  defs:
+    - term: object-oriented
+      meaning: |
+        Object Oriented Programming (or OOP for short) is a rather advanced way
+        of structuring code that is rather powerful. Instead of there being
+        one giant "application" that stores all of the data and all of the code,
+        it instead splits everything up into "objects", which are defined in
+        "classes". Java is entirely object-oriented, while others - such as Python
+        - it is optional.
+    - term: name mangling
+      meaning: |
+        The less said about it the better. It's a horribly hacked together solution
+        to a problem that could have been solved in a better way.
+
+- content: |
+    It also has issues with performance, considering that it's an interpreted
+    language, which allows for some rather "interesting" tricks. It is a good
+    language for starting out, but has some quirks that make it a little
+    painful for someone who likes consistency in how things work.
+  defs:
+    - term: interpreted language
+      meaning: |
+        When a computer runs a program written in an interpreted language, it "parses"
+        (figures out what the instruction says to do) when it reaches that line of
+        code. For a number of rather technical reasons, this method is slower than
+        "compiled" languages (such as Java and Typescript (which technically
+        compiles to Javascript, which is in itself a Just In Time (JIT) language,
+        where the computer compiles a line of code the first time it is called)),
+        where the code is converted into instructions that can run directly on
+        the processor.
+
+- content: |
+    Beware the circular imports!
+
+- title: Java
+  content: |
+    I have only started learning Java this year, for the AP Computer Science
+    Applications elective. It's... ok.
+
+- content: |
+    Remember how simple the Python "Hello World" program was? Here is the exact
+    same thing in Java:
+
+- fig: verboseJava
+
+- content: |
+    In Java, OOP is not recommended, its mandatory. Everything is a class (or
+    an interface, or an enum, all of which are still just classes). It is also
+    a compiled language, which means there are no circular import errors, and it
+    can run terrifyingly fast, but also is rather restrictive. Typing is also
+    mandatory, constructors don't inherit, and functions with optional arguments
+    have to be redefined for each possible case.
+
+- content: |
+    It also feels like every time I start to get used to its quirks, it throws
+    another one at me. For example, the default modulo operator (%) does not
+    do what it should with negative numbers. At all. Use
+    java.lang.Math.floorMod() instead.
+  defs:
+    - term: modulo
+      meaning: |
+        Ask a math teacher if you don't remember it from eighth grade.
+
+- title: Don't Laugh
+  content: |
+    Remember Desmos?
+
+- fig: desmos
+
+- content: |
+    It's just a graphing calculator, right? The one embedded in the math
+    MCAS? Definitely not Turing complete?
+
+- fig: cheating
+
+- content: |
+    (to any school administrator who is scared by this, don't worry, it
+    takes more time, energy, and knowledge of the material to do this
+    than to just solve the problem. The above graph was just something
+    I made to help me do my algebra homework last year.)
+
+- content: |
+    Considering that Desmos only "recently" (I say "recently", it was
+    actually over six months ago) added recursion, working with it is
+    not for the faint of heart. Documentation (at least any that I
+    can find) does not exist, so most of what I know I taught myself
+    by reverse-engineering graphs made by other people.
+  defs:
+    - term: recursion
+      meaning: |
+        A function calling itself. Fun fact: if you Google "recursion",
+        it will say "did you mean 'recursion'?".
+
+- content: |
+    A few of it's limitations include: you can't nest lists, lists
+    are limited to 1000 items, it inherits the Javascript floating
+    point imprecision nonsense, and it is not very performant (
+    especially on Chromebooks). On the other hand:
+
+- fig: pong
+
+- content: |
+    Most of these graphs were made while I was in eighth grade.
+
+- content: |
+    Also, to those who ask "when will trig ever be useful?".
+
+- content: |
+    My response is: "always, though you will probably never notice"
+
+- fig: dyson

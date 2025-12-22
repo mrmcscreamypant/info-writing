@@ -1,0 +1,30 @@
+import React from 'react';
+import Page from '../core/Page';
+import YAMLParser from '../core/YAMLParser';
+
+import document from './pro-con.yaml?raw';
+import AppImage from '../widgets/AppImage';
+import CodeSample, { CodeLanguage } from '../widgets/CodeSample';
+
+import verboseJavaSample from './codeSamples/HelloWorld.java?raw';
+import XKCDCredit from './XKCDCredit';
+import Desmos, { DesmosType } from '../widgets/Desmos';
+
+export default function ProConPage(): React.JSX.Element {
+    return <Page>
+        <YAMLParser markup={document} figs={{
+            python: <AppImage
+                src="https://imgs.xkcd.com/comics/python.png"
+                credit={<XKCDCredit />}
+                attributionLink='https://xkcd.com/353/'
+                caption='Fun Fact: python actually has the "antigravity" module, which - when imported - opens up this comic in a webbrowser.'
+            />,
+            python3: <CodeSample content='print("Hello, world!")' language={CodeLanguage.PY} file='helloWorld.py' />,
+            verboseJava: <CodeSample content={verboseJavaSample} language={CodeLanguage.JAVA} file='App.java' />,
+            desmos: <Desmos type={DesmosType.GEOMETRY} slug="k5sggcr7rn" />,
+            cheating: <Desmos type={DesmosType.CALCULATOR} slug="nzvkdo6syz" embed />,
+            pong: <Desmos type={DesmosType.CALCULATOR} slug="htebducdvg" embed />,
+            dyson: <Desmos type={DesmosType.THREED} slug="byji8toyc9" />
+        }} />
+    </Page>;
+}
