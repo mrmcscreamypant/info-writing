@@ -130,7 +130,7 @@
 
 - content: |
     A few of it's limitations include: you can't nest lists, lists
-    are limited to 1000 items, it inherits the Javascript floating
+    are limited to 10000 items, it inherits the Javascript floating
     point imprecision nonsense, and it is not very performant (
     especially on Chromebooks). On the other hand:
 
