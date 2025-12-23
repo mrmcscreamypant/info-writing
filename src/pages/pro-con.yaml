@@ -96,7 +96,7 @@
   defs:
     - term: modulo
       meaning: |
-        Ask a math teacher if you don't remember it from eighth grade.
+        Ask a math teacher if you don't remember from eighth grade.
 
 - title: Don't Laugh
   content: |
@@ -137,7 +137,7 @@
 - fig: pong
 
 - content: |
-    Most of these graphs were made while I was in eighth grade.
+    Most of these graphs were made while I was in middle school.
 
 - content: |
     Also, to those who ask "when will trig ever be useful?".
