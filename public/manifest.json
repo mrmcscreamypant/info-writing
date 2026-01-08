@@ -14,6 +14,19 @@
         "window-controls-overlay",
         "minimal-ui"
     ],
+    "launch_handler": {
+        "client_mode": "navigate-existing"
+    },
+    "shortcuts": [
+        {
+            "name": "Home",
+            "url": "/#/"
+        },
+        {
+            "name": "About Me",
+            "url": "/#/about-me"
+        }
+    ],
     "display": "standalone",
     "theme_color": "#101211",
     "background_color": "#101211"
