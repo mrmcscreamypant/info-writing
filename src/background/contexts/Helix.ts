@@ -46,21 +46,21 @@ class HelixEntity extends Entity {
 }
 
 export default class HelixContext extends Context {
-    private readonly title: HelixEntity;
+    private readonly helix: HelixEntity;
     private readonly lightArray: LightArray;
 
     public constructor(engine: Engine) {
         super(engine);
 
-        this.title = new HelixEntity(this.engine);
-        this.add(this.title);
+        this.helix = new HelixEntity(this.engine);
+        this.add(this.helix);
 
         this.lightArray = new LightArray(this.engine);
         this.add(this.lightArray);
     }
 
     public override tick(delta: number): void {
-        this.title.tick(delta);
+        this.helix.tick(delta);
         this.lightArray.tick(delta);
     }
 }
