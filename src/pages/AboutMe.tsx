@@ -9,6 +9,8 @@ export default function AboutMe(): React.JSX.Element {
             database had stored was covered in compression artifacts (but weirdly
             is high resolution? Never mind, I don't want to know...). Thankfully,
             the filter effects do a nice job of hiding them.
+
+            I turned 17 halfway through this project, and was in 11th grade.
         </Paragraph>
         <Paragraph title="Why I picked programming">
             I am decently good at it. I learned Python from library books
