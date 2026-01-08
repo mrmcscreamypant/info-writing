@@ -9,6 +9,11 @@
         }
     ],
     "start_url": "/info-writing",
+    "display_override": [
+        "fullscreen",
+        "window-controls-overlay",
+        "minimal-ui"
+    ],
     "display": "standalone",
     "theme_color": "#101211",
     "background_color": "#101211"
