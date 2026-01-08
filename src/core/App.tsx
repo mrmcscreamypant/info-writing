@@ -21,7 +21,7 @@ export function App(): React.JSX.Element {
         currentPage
     };
 
-    return <Theme appearance='dark'>
+    return <Theme appearance='dark' accentColor='teal'>
         <Background engineHooks={engineHooks} />
         <div id="content" ref={pageScrollRef}>
             <AppRoutes setCurrentPage={setCurrentPage} />
