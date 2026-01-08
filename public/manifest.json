@@ -10,6 +10,6 @@
     ],
     "start_url": "/info-writing",
     "display": "standalone",
-    "theme_color": "black",
+    "theme_color": "#161817",
     "background_color": "black"
 }
