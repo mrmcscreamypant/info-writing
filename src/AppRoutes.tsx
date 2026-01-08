@@ -16,9 +16,7 @@ type SetCurrentPageProps = { setCurrentPage: (value: Location) => void };
 
 function LocationUpdater({ setCurrentPage }: SetCurrentPageProps): React.JSX.Element {
     const location = useLocation();
-
     React.useEffect(() => { setCurrentPage(location); }, [location]);
-
     return null;
 }
 
