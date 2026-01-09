@@ -5,6 +5,7 @@ import LightArray from '../LightArray';
 
 import fragShader from './shader.frag.glsl?raw';
 import vertShader from './shader.vert.glsl?raw';
+import { TeapotGeometry } from 'three/examples/jsm/Addons.js';
 
 export default class ShaderContext extends Context {
     private readonly shaderMat: THREE.ShaderMaterial;
@@ -15,11 +16,12 @@ export default class ShaderContext extends Context {
         this.shaderMat = new THREE.ShaderMaterial({
             fragmentShader: fragShader,
             vertexShader: vertShader,
+            side: THREE.DoubleSide,
             uniforms: {
                 time: {value: 0.0}
             }
         });
-        this.add(new THREE.Mesh(new THREE.SphereGeometry(1), this.shaderMat));
+        this.add(new THREE.Mesh(new TeapotGeometry(0.5), this.shaderMat));
     }
 
     public override tick(delta: number): void {
