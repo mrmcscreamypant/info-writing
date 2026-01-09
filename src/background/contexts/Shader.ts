@@ -7,22 +7,23 @@ import fragShader from './shader.frag.glsl?raw';
 import vertShader from './shader.vert.glsl?raw';
 
 export default class ShaderContext extends Context {
-    private readonly lightArray: LightArray;
+    private readonly shaderMat: THREE.ShaderMaterial;
 
     public constructor(engine: Engine) {
         super(engine);
 
-        this.add(new THREE.Mesh(new THREE.SphereGeometry(1), new THREE.ShaderMaterial({
+        this.shaderMat = new THREE.ShaderMaterial({
             fragmentShader: fragShader,
-            vertexShader: vertShader
-        })));
-
-        this.lightArray = new LightArray(this.engine);
-        this.add(this.lightArray);
+            vertexShader: vertShader,
+            uniforms: {
+                time: {value: 0.0}
+            }
+        });
+        this.add(new THREE.Mesh(new THREE.SphereGeometry(1), this.shaderMat));
     }
 
     public override tick(delta: number): void {
-        this.lightArray.tick(delta);
+        this.shaderMat.uniforms.time.value = this.engine.clock.elapsedTime;
     }
 
     public override get cameraPos(): THREE.Vector3 {

@@ -1,9 +1,13 @@
-varying vec2 vUv;
-
 precision highp float;
+
+varying vec2 vUv;
+varying float vTime;
+
+uniform float time;
 
 void main() {
     vUv = uv;
+    vTime = time;
 
     gl_Position = projectionMatrix *
         modelViewMatrix *
