@@ -82,16 +82,13 @@ export default class Engine {
                 .multiplyScalar(Math.min(0.8 * delta, 1))
         );
 
-        const oldRot = (new THREE.Vector3).setFromEuler(this.camera.rotation);
+        const oldRot = this.camera.quaternion.clone();
         this.camera.lookAt(this.context ?
             this.context.position :
             new THREE.Vector3(0, 1, 0));
-        const rot = (new THREE.Vector3).copy(this.camera.rotation);
-        this.camera.rotation.setFromVector3(
-            rot.clone()
-                .sub(oldRot)
-                .multiplyScalar(Math.min(0.8 * delta, 1))
-                .add(oldRot)
+        const rot = this.camera.quaternion.clone();
+        this.camera.quaternion.copy(
+            oldRot.rotateTowards(rot, rot.angleTo(oldRot) / 50)
         );
 
         this.composer.render(delta);
