@@ -9,7 +9,9 @@ import mugshot from '../../assets/lowres.jpg?url';
 
 const TEXTURE = await new THREE.TextureLoader().loadAsync(mugshot);
 
-class WhyMeEntity extends Entity {
+export default class FaceContext extends Context {
+    private readonly lightArray: LightArray;
+
     public constructor(engine: Engine) {
         super(engine);
 
@@ -18,18 +20,6 @@ class WhyMeEntity extends Entity {
         }));
         face.scale.set(1, TEXTURE.height / TEXTURE.width, 1).multiplyScalar(2.5);
         this.add(face);
-    }
-}
-
-export default class FaceContext extends Context {
-    private readonly me: WhyMeEntity;
-    private readonly lightArray: LightArray;
-
-    public constructor(engine: Engine) {
-        super(engine);
-
-        this.me = new WhyMeEntity(this.engine);
-        this.add(this.me);
 
         this.lightArray = new LightArray(this.engine);
         this.add(this.lightArray);
