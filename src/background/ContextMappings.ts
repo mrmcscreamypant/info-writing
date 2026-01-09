@@ -4,6 +4,7 @@ import PhysContext from './contexts/Phys';
 import TeapotContext from './contexts/Teapot';
 import HelixContext from './contexts/Helix';
 import FaceContext from './contexts/Face';
+import StarContext from './contexts/Shader';
 
 export const ContextMappings: {
     [key in AppRoute]: ContextConstructor | null;
@@ -11,5 +12,6 @@ export const ContextMappings: {
     "/": PhysContext,
     "/narrative": TeapotContext,
     "/pro-con": HelixContext,
-    "/about-me": FaceContext
+    "/about-me": FaceContext,
+    "/tutorial": StarContext
 };

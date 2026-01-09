@@ -20,7 +20,7 @@ export default class Engine {
     private readonly renderer: THREE.WebGLRenderer;
     private readonly composer: POST.EffectComposer;
     private readonly scene: THREE.Scene;
-    private readonly clock: THREE.Clock;
+    public readonly clock: THREE.Clock;
 
     public readonly camera: THREE.PerspectiveCamera;
 

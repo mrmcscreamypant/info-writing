@@ -4,12 +4,14 @@ import Index from './pages';
 import Narrative from './pages/Narrative';
 import ProConPage from './pages/proCon';
 import AboutMe from './pages/AboutMe';
+import Tutorial from './pages/Tutorial';
 
 export const enum AppRoute {
     INDEX = "/",
     NARRATIVE = "/narrative",
     PRO_CON = "/pro-con",
-    ABOUT_ME = "/about-me"
+    ABOUT_ME = "/about-me",
+    TUTORIAL = "/tutorial"
 }
 
 type SetCurrentPageProps = { setCurrentPage: (value: Location) => void };
@@ -27,6 +29,7 @@ export default function AppRoutes({ setCurrentPage }: SetCurrentPageProps): Reac
             <Route path={AppRoute.NARRATIVE} element={<Narrative />} />
             <Route path={AppRoute.PRO_CON} element={<ProConPage />} />
             <Route path={AppRoute.ABOUT_ME} element={<AboutMe />} />
+            <Route path={AppRoute.TUTORIAL} element={<Tutorial />} />
         </Routes>
         <LocationUpdater setCurrentPage={setCurrentPage} />
     </HashRouter>;

@@ -14,6 +14,7 @@ export default function Index(): React.JSX.Element {
         <Paragraph title="Helpful Buttons (which is NOT the title of the personal narrative, by the way) (this is very temporary I swear I will clean this up in the future (tm))">
             <AppLink to={AppRoute.NARRATIVE} text='Personal Narrative' />
             <AppLink to={AppRoute.PRO_CON} text='Pro/Con' />
+            <AppLink to={AppRoute.TUTORIAL} text='Tutorial' />
             <AppLink to={AppRoute.ABOUT_ME} text='About Me' />
         </Paragraph>
     </Page>;

@@ -20,12 +20,7 @@ export default class FaceContext extends Context {
         }));
         face.scale.set(1, TEXTURE.height / TEXTURE.width, 1).multiplyScalar(2.5);
         this.add(face);
-
-        this.lightArray = new LightArray(this.engine);
-        this.add(this.lightArray);
     }
 
-    public override tick(delta: number): void {
-        this.lightArray.tick(delta);
-    }
+    public override tick(delta: number): void { }
 }
