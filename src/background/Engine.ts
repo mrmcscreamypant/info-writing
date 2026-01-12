@@ -1,10 +1,12 @@
 import * as THREE from 'three';
+import * as CSS3D from 'three/addons/renderers/CSS3DRenderer.js';
 import * as POST from 'postprocessing';
 import { MotionValue } from 'motion/react';
 import { Location } from 'react-router';
 import Context from './Context';
 import { ContextMappings } from './ContextMappings';
 import { AppRoute } from '../AppRoutes';
+import { rootElem } from '..';
 
 export type EngineHooks = {
     scrollProgress: MotionValue<number>,
@@ -18,6 +20,7 @@ export default class Engine {
     private readonly getHooks: () => EngineHooks;
 
     private readonly renderer: THREE.WebGLRenderer;
+    private readonly css3d: CSS3D.CSS3DRenderer;
     private readonly composer: POST.EffectComposer;
     private readonly scene: THREE.Scene;
     public readonly clock: THREE.Clock;
@@ -46,6 +49,11 @@ export default class Engine {
             antialias: false,
             powerPreference: "high-performance"
         });
+
+        this.css3d = new CSS3D.CSS3DRenderer({ element: document.getElementById("css3d") });
+        const pageObject = new CSS3D.CSS3DSprite(document.getElementById("content"));
+        pageObject.position.set(0, 0, 0);
+        this.scene.add(pageObject);
 
         this.composer = new POST.EffectComposer(this.renderer);
         this.composer.addPass(new POST.RenderPass(
@@ -92,11 +100,13 @@ export default class Engine {
         );
 
         this.composer.render(delta);
+        this.css3d.render(this.scene, this.camera);
     }
 
     private handleResize(): void {
         this.composer.setSize(window.innerWidth, window.innerHeight, false);
         this.renderer.setSize(window.innerWidth, window.innerHeight, false);
+        this.css3d.setSize(window.innerWidth, window.innerHeight);
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix();
     }

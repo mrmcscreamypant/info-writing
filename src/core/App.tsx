@@ -3,7 +3,7 @@ import './app.css';
 import AppRoutes from '../AppRoutes';
 import "@radix-ui/themes/styles.css";
 import Background from '../background/Background';
-import { AnimatePresence, useScroll, useSpring, useVelocity } from 'motion/react';
+import { useScroll, useSpring, useVelocity } from 'motion/react';
 import { EngineHooks } from '../background/Engine';
 import { Theme } from '@radix-ui/themes';
 import { Location } from 'react-router';
@@ -23,7 +23,9 @@ export function App(): React.JSX.Element {
 
     return <Theme appearance='dark' accentColor='teal'>
         <Background engineHooks={engineHooks} />
-        <div id="content" ref={pageScrollRef}>
+        <div id="css3d" ref={pageScrollRef}>
+        </div>
+        <div id="content">
             <AppRoutes setCurrentPage={setCurrentPage} />
         </div>
     </Theme>;

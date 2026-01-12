@@ -23,4 +23,13 @@ export default class FaceContext extends Context {
     }
 
     public override tick(delta: number): void { }
+
+    public override get cameraPos(): THREE.Vector3 {
+        const time = this.engine.clock.elapsedTime / 2;
+        return new THREE.Vector3(
+            Math.sin(time),
+            1,
+            Math.cos(time)
+        ).multiplyScalar(2).add(this.position);
+    }
 }

@@ -24,9 +24,7 @@ export default function Page({ children, noFooter }: { noFooter?: boolean } & Re
     return <>
         {loaded ?
             <Container size={"3"}>
-                <motion.div className='page'>
-                    {children}
-                </motion.div>
+                {children}
                 {noFooter || <Footer />}
             </Container> :
             <>LOADING...</>
