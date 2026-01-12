@@ -38,7 +38,7 @@ function DefinitionList({ defs, contentHook }: { defs: Def[], contentHook: [stri
         for (const def of defs) {
             newContent = newContent.replaceAll(highlited(def.term), def.term);
         }
-        setContent(newContent)
+        setContent(newContent);
     }, [defHovered]);
 
     return <motion.div
