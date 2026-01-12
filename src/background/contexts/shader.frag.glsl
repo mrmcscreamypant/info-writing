@@ -14,9 +14,9 @@ float positiveCos(float x) {
 }
 
 void main() {
-    float fade = sqrt(cos(vUv.y * pi2 + vTime));
+    float fade = sqrt(cos(vUv.x * pi2 + vTime));
     float r = positiveSin(vUv.x * pi2 * cos(vTime));
-    float g = positiveSin(dot((vUv.yx * sin(vTime)) / (vUv.xy * cos(vTime)), vec2(0, 0)));
-    float b = positiveCos(sin(vUv.y / vUv.x) * pi2 * sin(vTime));
+    float g = positiveSin(dot((vUv.xy * sin(vTime)) / (vUv.yx * cos(vTime)), vec2(0, 0)));
+    float b = positiveCos(sin(vUv.x / vUv.y) * pi2 * sin(vTime));
     gl_FragColor = vec4(r, g, b, fade);
 }
