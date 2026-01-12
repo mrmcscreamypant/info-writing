@@ -25,17 +25,20 @@ function DefinitionList({ defs, contentHook }: { defs: Def[], contentHook: [stri
     const [content, setContent] = contentHook;
 
     React.useEffect(() => {
-        const highlited = (term: string): string => renderToString(<span style={{ backgroundColor: "yellow", color: "black", borderRadius:"5px", padding: "2px" }}>{term}</span>);
+        const highlited = (term: string): string => renderToString(<span style={{ backgroundColor: "yellow", color: "black", borderRadius: "5px", padding: "2px" }}>{term}</span>);
 
+        let newContent = content.replaceAll("\n", " ");
         if (defHovered) {
             for (const def of defs) {
-                setContent(content.replaceAll(def.term, highlited(def.term)));
+                newContent = newContent.replaceAll(def.term, highlited(def.term));
             }
+            setContent(newContent);
             return;
         }
         for (const def of defs) {
-            setContent(content.replaceAll(highlited(def.term), def.term));
+            newContent = newContent.replaceAll(highlited(def.term), def.term);
         }
+        setContent(newContent)
     }, [defHovered]);
 
     return <motion.div
