@@ -139,11 +139,11 @@
     markdown with Typescript is a whole can of worms I don't want to even think
     about (though I did check if it was possible).
   defs:
-    - term: Markdown
+    - term: markdown
       meaning: |
         A simplistic format for creating documents. I'm 23% sure that Google
         Docs uses it under the hood.
-    - term: JSX / TSX
+    - term: JSX
       meaning:
         I don't actually know what it stands for, but it is essentially a
         Javascript (or Typescript) file with HTML spliced into it. That
