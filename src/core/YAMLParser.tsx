@@ -1,7 +1,9 @@
 import React from 'react';
+import { renderToString } from 'react-dom/server';
 import { load } from 'js-yaml';
 import Paragraph from '../widgets/Paragraph';
 import { Badge, Card, Flex, IconButton, Text } from '@radix-ui/themes';
+
 
 import { AnimatePresence, motion } from 'motion/react';
 
@@ -18,8 +20,23 @@ function Definition({ term, meaning }: Def): React.JSX.Element {
     </>;
 }
 
-function DefinitionList({ defs }: { defs: Def[] }): React.JSX.Element {
+function DefinitionList({ defs, contentHook }: { defs: Def[], contentHook: [string, (value: string) => void] }): React.JSX.Element {
     const [defHovered, setDefHovered] = React.useState(false);
+    const [content, setContent] = contentHook;
+
+    React.useEffect(() => {
+        const highlited = (term: string): string => renderToString(<span style={{ backgroundColor: "yellow", color: "black", borderRadius:"5px", padding: "2px" }}>{term}</span>);
+
+        if (defHovered) {
+            for (const def of defs) {
+                setContent(content.replaceAll(def.term, highlited(def.term)));
+            }
+            return;
+        }
+        for (const def of defs) {
+            setContent(content.replaceAll(highlited(def.term), def.term));
+        }
+    }, [defHovered]);
 
     return <motion.div
         onHoverStart={() => setDefHovered(true)}
@@ -35,13 +52,13 @@ function DefinitionList({ defs }: { defs: Def[] }): React.JSX.Element {
 
             marginLeft: "8px",
             position: "relative",
-            zIndex: 100
+            zIndex: 100,
         }}
         initial={{
             width: "10%"
         }}
         whileHover={{
-            width: "70%"
+            width: "100%"
         }}
     >
         {defHovered ? <Card asChild>
@@ -75,13 +92,19 @@ export default function YAMLParser({ markup, figs }: { markup: string, figs?: { 
     const content = load(markup) as YAMLPage;
 
     return content.flatMap(
-        (paragraph, i: number) => <Paragraph key={i} title={paragraph.title}>
-            <Flex flexGrow={"1"}>
-                {paragraph.fig ? figs[paragraph.fig] : <Text style={{
-                    width: "90%"
-                }}>{paragraph.content}</Text>}
-                {paragraph.defs && <DefinitionList defs={paragraph.defs} />}
-            </Flex>
-        </Paragraph >
+        (paragraph, i: number) => {
+            const contentHook = React.useState(paragraph.content);
+
+            const text = <Text style={{
+                width: "90%"
+            }} dangerouslySetInnerHTML={{ __html: contentHook[0] }}></Text>;
+
+            return <Paragraph key={i} title={paragraph.title}>
+                <Flex flexGrow={"1"}>
+                    {paragraph.fig ? figs[paragraph.fig] : text}
+                    {paragraph.defs && <DefinitionList defs={paragraph.defs} contentHook={contentHook} />}
+                </Flex>
+            </Paragraph >;
+        }
     );
 }

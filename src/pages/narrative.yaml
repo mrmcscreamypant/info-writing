@@ -56,11 +56,10 @@
     simpler explanation. Believe me, I've tried. Unfortunately (apparently)
     all of my attempts so far at doing so have wound up with "too many technical
     words". The way I brought a number of different concepts together (React, THREE,
-    vite, Github CI, YAML, etc.) in this makes it impossible (I really wish I could
-    use italics) for me to explain how they all work together <i>without</i> (see?)
-    a highly technical explanation. The best example of this that I can think of is
-    to ask someone who's first language is English (and who is not an English major)
-    for the definition of "adnoun".
+    vite, Github CI, YAML, etc.) in this makes it impossible for me to explain how
+    they all work together <i>without</i> a highly technical explanation. The best
+    example of this that I can think of is to ask someone who's first language is
+    English (and who is not an English major) for the definition of "adnoun".
   defs:
     - term: adnoun
       meaning: |
