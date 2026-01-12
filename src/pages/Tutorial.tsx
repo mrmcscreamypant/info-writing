@@ -19,6 +19,7 @@ export default function Tutorial(): React.JSX.Element {
             echo: <CodeSample content={echo} language={CodeLanguage.PY} file='echo.py' />,
             variable: <CodeSample content={cipherLines(1)} language={CodeLanguage.PY} file='variable.py' />,
             loop: <CodeSample content={cipherLines(5)} language={CodeLanguage.PY} file='loop.py' />,
+            cipher: <CodeSample content={cipher} language={CodeLanguage.PY} file='cipher.py' />,
         }} />
     </Page>;
 }

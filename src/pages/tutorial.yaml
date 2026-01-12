@@ -63,3 +63,27 @@
     the variable is called "plaintext", and we store the user input in there.
 
 - fig: loop
+
+- content: |
+    The next line sets the new "output" variable to an empty string (""). The value
+    of "output" will be changed later.
+
+- content: |
+    The next line is a loop. In this particular case, it is used to iterate through each character
+    in the "plaintext" variable, and execute each line of code that is indented after
+    it. It runs the code with the "character" variable set to the current character in
+    the "plaintext" variable.
+
+- content: |
+    The indented line of text executes for each character in "plaintext". Each time it does,
+    it sets the value of the "output" variable to the current character in the value of "plaintext"
+    plus the previous value of "output". This has the effect of putting each character
+    in front of all the characters that came before it. In other words, it just reverses
+    the value of "plaintext" into "output".
+
+- fig: cipher
+
+- content: |
+    Even though we have the final, encoded, string stored in "output", we need to show it to the user.
+    Hence, we just print the value of "output". With that, you have a fully functional
+    python program that flips the input text.
