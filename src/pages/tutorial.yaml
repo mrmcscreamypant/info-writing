@@ -1,5 +1,65 @@
-- title: I am going to do a horrible job explaing what is going on, but here we go...
+- title: I am going to do a horrible job explaining what is going on, but here we go...
   content: |
-    Python is probably the best langauge to learn programming with.
+    Python is probably the best language to learn programming with.
     A possible alternative is lua, but I am much more confident with
     Python, so that is what we are going to use.
+
+- title: Running Python
+  content: |
+    You can write all the code you want and nothing will happen without an interpreter.
+    Python is an interpreted language (see the <a href="./#/pro-con">pro/con</a> section
+    on it for a definition of "interpreted language"), which means your computer has no
+    idea what to do with the code you write unless python is installed. I would recommend
+    <a target="_blank" href="https://python.org">the official python.org site</a> to
+    download the installer for either mac or Windows (if you are on linux, I trust you
+    to know what to do). I will add that this does not work on chromebooks (I would not
+    wish my setup on anyone). You will also need a text editor for actually writing code.
+    There are plenty of ones out there, but for beginners I would recommend IDLE, which
+    ships with the official python installer.
+
+- content: |
+    As to actually <i>running</i> python, you need to open up a command prompt (start menu
+    + "cmd" on Windows, who knows what on OSX and I trust linux users to know what do do).
+    Then run the "python" command, followed by the path to the file.
+
+- title: Time for some code
+  content: |
+    Let's start with a basic "hello world" program. This should write the text "Hello, World!"
+    to the console when run.
+
+- fig: helloworld
+
+- content: |
+    If that did not write "Hello, World!", something has gone wrong, and it is up to you
+    to fix the problem. Sorry.
+
+- content: |
+    Now lets try to take some user input and echo it back.
+  defs:
+    - term: echo
+      meaning: |
+        Send back the same input it was given.
+
+- fig: echo
+
+- content: |
+    If you run that program, you should initially get just a "> " prompt on the console.
+    If you write some text, then press enter, it should echo your text back at you.
+
+- content: |
+    This is also a sample of string concatenation, or adding two strings together
+    with a "+" operator.
+
+- content: |
+    To cap off the tutorial, we are going to jump straight into making a encryption
+    program. All it is going to do is flip the direction of the input text. I am going
+    to explain the concepts required as they come up.
+
+- fig: variable
+
+- content: |
+    Already the first line introduces a new concept. This is a variable. A variable is
+    a way of storing information for access and manipulation later. In this case,
+    the variable is called "plaintext", and we store the user input in there.
+
+- fig: loop
