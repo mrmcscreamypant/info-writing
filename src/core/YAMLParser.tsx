@@ -30,13 +30,13 @@ function DefinitionList({ defs, contentHook }: { defs: Def[], contentHook: [stri
         let newContent = content.replaceAll("\n", " ");
         if (defHovered) {
             for (const def of defs) {
-                newContent = newContent.replaceAll(def.term, highlited(def.term));
+                newContent = newContent.replace(def.term, highlited(def.term));
             }
             setContent(newContent);
             return;
         }
         for (const def of defs) {
-            newContent = newContent.replaceAll(highlited(def.term), def.term);
+            newContent = newContent.replace(highlited(def.term), def.term);
         }
         setContent(newContent);
     }, [defHovered]);
