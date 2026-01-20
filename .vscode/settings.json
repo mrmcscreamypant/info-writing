@@ -7,6 +7,7 @@
         "Desmos",
         "distros",
         "MCAS",
+        "sandboxed",
         "vite"
     ]
 }

@@ -16,6 +16,7 @@ export default function Index(): React.JSX.Element {
             <AppLink to={AppRoute.PRO_CON} text='Pro/Con' />
             <AppLink to={AppRoute.TUTORIAL} text='Tutorial' />
             <AppLink to={AppRoute.ABOUT_ME} text='About Me' />
+            <AppLink to={AppRoute.TOOLS} text='tools' />
         </Paragraph>
     </Page>;
 }

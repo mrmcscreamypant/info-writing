@@ -49,4 +49,18 @@
   content: |
     This is a Microsoft product, but it is open source and can be compiled yourself
     (minus the spyware), so it is not so bad. Great for anything but Java, where it
-    dramatically fails, but it supports most other popular languages quite well. 
+    dramatically fails, but it supports most other popular languages quite well. It
+    even has a <a href="https://vscode.dev" target="_blank">web version</a>, which
+    is a core part of my workflow (school IT department please don't block it).
+
+- title: |
+    #3: code.org
+  content: |
+    Is totally unusable. The javascript syntax <i>highlighter</i> works fine, but
+    the interpreter is outrageously noncompliant. Classes don't work, you can't use
+    const or let, and it complains about strings without double-quotes. It <i>could<\i>
+    just run the code in a sandboxed iframe, but no, it has to implement it's own javascript
+    parser that lacks features that "students should not know about", which I take
+    great offense at. Yes, it is a mandatory part of the AP CS Principles curriculum.
+
+- content: I never want to go near it again. In fact, I won't even provide a link to it.
