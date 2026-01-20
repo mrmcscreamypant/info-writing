@@ -5,6 +5,7 @@ import TeapotContext from './contexts/Teapot';
 import HelixContext from './contexts/Helix';
 import FaceContext from './contexts/Face';
 import StarContext from './contexts/Shader';
+import WrenchContext from './contexts/Wrench';
 
 export const ContextMappings: {
     [key in AppRoute]: ContextConstructor | null;
@@ -13,5 +14,6 @@ export const ContextMappings: {
     "/narrative": TeapotContext,
     "/pro-con": HelixContext,
     "/about-me": FaceContext,
-    "/tutorial": StarContext
+    "/tutorial": StarContext,
+    "/tools": WrenchContext
 };

@@ -21,7 +21,7 @@ export default class LightArray extends Entity {
         for (const color of LightArray.colors) {
             const light = new THREE.PointLight(
                 color,
-                10
+                20
             );
             this.lights.push(light);
             this.add(light);
