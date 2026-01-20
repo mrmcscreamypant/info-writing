@@ -1,0 +1,31 @@
+- title: Useful Tools
+  content: |
+    To (mis)interpret Alan Turing, there is no wrong way to do computer
+    science. This is about as true as "there is no such thing a as a stupid
+    question" (I can think of a few off of the top of my head), and everyone
+    has their own workflow they are comfortable with (which is no indication
+    of whether or not the workflow makes <i>sense</i> to anyone but them, don't
+    ask about mine). There are, however, a few constants that it is worth it to
+    have.
+
+- title: Linux
+
+- fig: linux
+
+- content: |
+    In my experience, most people's reaction to me mentioning linux is "what is that".
+    Actually explaining would (a) take a long time, and (b) the above comic is accurate.
+    It's a family of operating systems (think Windows but not spyware, and it requires far
+    less resources to install and use). Most linux distros are open-source and developed
+    by a lot of people in their free time. It falls into the UNIX family of operating systems
+    (which includes MacOS). It does take a <i>little</i> experience to use, though.
+  defs:
+    - term: distros
+      meaning: |
+        Short for "distributions"
+
+- fig: linux2
+
+- title: GIT
+
+- fig: git
