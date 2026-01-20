@@ -8,24 +8,45 @@
     ask about mine). There are, however, a few constants that it is worth it to
     have.
 
-- title: Linux
+- title: |
+    Honorable Mention: Linux
 
 - fig: linux
 
 - content: |
-    In my experience, most people's reaction to me mentioning linux is "what is that".
+    In my experience, most people's reaction to me mentioning linux is "what is that?".
     Actually explaining would (a) take a long time, and (b) the above comic is accurate.
-    It's a family of operating systems (think Windows but not spyware, and it requires far
-    less resources to install and use). Most linux distros are open-source and developed
-    by a lot of people in their free time. It falls into the UNIX family of operating systems
-    (which includes MacOS). It does take a <i>little</i> experience to use, though.
+    It's a family of operating systems (think Windows but not
+    <a href="https://penncomp.com/is-windows-11-spying-how-to-stay-safe/" target="_blank">spyware</a>,
+    and it requires far less resources to install and use). Most linux distros are open-source
+    and developed  by a lot of people in their free time. It falls into the UNIX family
+    of operating systems (which includes MacOS). It does take a <i>little</i> experience
+    to use, though. It's also free. Unlike Windows and MacOS (which is technically free,
+    but the dedicated hardware sure isn't).
   defs:
+    - term: spyware
+      meaning: |
+        Software that secretly spies on users, without their knowledge, and often illegally. 
     - term: distros
       meaning: |
         Short for "distributions"
 
 - fig: linux2
 
-- title: GIT
+- title: |
+    #1: GIT
 
 - fig: git
+
+- content: |
+    Git takes some experience to get used to as well, but it is <i>very</i> powerful.
+    It is a way to keep track of editing projects (think Docs' "revision history",
+    but much better). It also allows for multiple people to work on the same project
+    at the same time (which may result in merge conflicts).
+
+- title: |
+    #2: Visual Studio Code
+  content: |
+    This is a Microsoft product, but it is open source and can be compiled yourself
+    (minus the spyware), so it is not so bad. Great for anything but Java, where it
+    dramatically fails, but it supports most other popular languages quite well. 
