@@ -34,7 +34,7 @@ class WrenchEntity extends Entity {
         this.time += delta * 5;
         this.rotation.y = this.time / 10;
         if (this.gltf) {
-            const angle = Math.abs(Math.sin(Math.sqrt(Math.abs(this.engine.hooks.scrollSpring.get()) / 1000)) / 2);
+            const angle = Math.min(Math.abs(this.engine.hooks.scrollSpring.get()) / 20000, 0.5);
             this.topClaw.rotation.x = angle;
             this.bottomClaw.rotation.x = Math.PI - angle;
         }
