@@ -2,21 +2,33 @@ import React from 'react';
 import Page from '../core/Page';
 
 import Paragraph from '../widgets/Paragraph';
-import AppLink from '../widgets/AppLink';
+import AppLink, { AppLinkDirection } from '../widgets/AppLink';
 import { AppRoute } from '../AppRoutes';
-import { Text } from '@radix-ui/themes';
+import { Card, Flex, Text } from '@radix-ui/themes';
+
+function SubpageCard({ title, route }: { title: string, route: AppRoute }): React.JSX.Element {
+    return <Card style={{ width: "25%" }}>
+        <h1>{title}</h1>
+        <AppLink to={route} text="Read" direction={AppLinkDirection.FORWARD}></AppLink>
+    </Card>;
+}
+
+function SubpagesList(): React.JSX.Element {
+    return <Paragraph>
+        <Flex gap="3">
+            <SubpageCard title="Narrative" route={AppRoute.NARRATIVE} />
+            <SubpageCard title="Pros/Cons Of Various Programming Languages" route={AppRoute.PRO_CON} />
+            <SubpageCard title="Python Tutorial" route={AppRoute.TUTORIAL} />
+            <SubpageCard title="Ranked Programming Tools" route={AppRoute.TOOLS} />
+        </Flex>
+    </Paragraph>;
+}
 
 export default function Index(): React.JSX.Element {
     return <Page noFooter>
         <Paragraph title="Hello World">
             <Text>There is quite a lot going on here</Text>
         </Paragraph>
-        <Paragraph title="Helpful Buttons (which is NOT the title of the personal narrative, by the way) (this is very temporary I swear I will clean this up in the future (tm))">
-            <AppLink to={AppRoute.NARRATIVE} text='Personal Narrative' />
-            <AppLink to={AppRoute.PRO_CON} text='Pro/Con' />
-            <AppLink to={AppRoute.TUTORIAL} text='Tutorial' />
-            <AppLink to={AppRoute.ABOUT_ME} text='About Me' />
-            <AppLink to={AppRoute.TOOLS} text='tools' />
-        </Paragraph>
+        <SubpagesList />
     </Page>;
 }
