@@ -37,5 +37,8 @@ export default function Index(): React.JSX.Element {
             <Text>There is quite a lot going on here</Text>
         </Paragraph>
         <SubpagesList />
+        <Paragraph title="More Stuff">
+            <AppLink to={AppRoute.ABOUT_ME} text="About Me" />
+        </Paragraph>
     </Page>;
 }

@@ -8,11 +8,13 @@ import Paragraph from '../widgets/Paragraph';
 import AppLink, { AppLinkDirection } from '../widgets/AppLink';
 import { AppRoute } from '../AppRoutes';
 
-function Footer(): React.JSX.Element {
-    return <div className="footer">
-        <Paragraph>
-            <AppLink to={AppRoute.INDEX} direction={AppLinkDirection.BACKWARD} text="Back to home" />
-        </Paragraph>
+function Footer({ hidden }: { hidden: boolean }): React.JSX.Element {
+    return <div className='footer'>
+        {hidden ||
+            <Paragraph>
+                <AppLink to={AppRoute.INDEX} direction={AppLinkDirection.BACKWARD} text="Back to home" />
+            </Paragraph>
+        }
     </div>;
 }
 
@@ -27,7 +29,7 @@ export default function Page({ children, noFooter }: { noFooter?: boolean } & Re
                 <motion.div className='page'>
                     {children}
                 </motion.div>
-                {noFooter || <Footer />}
+                <Footer hidden={noFooter} />
             </Container> :
             <>LOADING...</>
         }
