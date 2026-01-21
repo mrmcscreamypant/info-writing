@@ -25,8 +25,9 @@ function iconFromLinkDirection(direction: LinkDirection): typeof AppLinkDirectio
 export default function AppLink({ to, text, direction = AppLinkDirection.NONE }: { to: AppRoute, text: string, direction?: LinkDirection }): React.JSX.Element {
     return <NavLink to={to}>
         <Button variant='soft'>
-            {iconFromLinkDirection(direction)}
+            {direction == AppLinkDirection.BACKWARD && iconFromLinkDirection(direction)}
             <Text>{text}</Text>
+            {direction == AppLinkDirection.FORWARD && iconFromLinkDirection(direction)}
         </Button>
     </NavLink>;
 }
