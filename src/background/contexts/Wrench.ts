@@ -32,6 +32,7 @@ class WrenchEntity extends Entity {
 
     public tick(delta: number): void {
         this.time += delta * 5;
+        this.engine.hooks.scrollSpring.set(Math.min(Math.abs(this.engine.hooks.scrollSpring.get()), 1000));
         this.rotation.y = this.time / 10;
         if (this.gltf) {
             const angle = Math.min(Math.abs(this.engine.hooks.scrollSpring.get()) / 20000, 0.5);
