@@ -7,10 +7,17 @@ import { AppRoute } from '../AppRoutes';
 import { Card, Flex, Text } from '@radix-ui/themes';
 
 function SubpageCard({ title, route }: { title: string, route: AppRoute }): React.JSX.Element {
-    return <Card style={{ width: "25%" }}>
-        <h1>{title}</h1>
-        <AppLink to={route} text="Read" direction={AppLinkDirection.FORWARD}></AppLink>
-    </Card>;
+    return <Flex direction={'column'} style={{ width: "25%", height: "max-content" }}>
+        <Card >
+            <Text size="5">{title}</Text>
+        </Card>
+        <AppLink
+            to={route}
+            text="Read"
+            direction={AppLinkDirection.FORWARD}
+            style={{ width: "100%" }}
+        />
+    </Flex>;
 }
 
 function SubpagesList(): React.JSX.Element {
