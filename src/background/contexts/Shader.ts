@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import Context from '../Context';
 import Engine from '../Engine';
-import LightArray from '../LightArray';
 
 import fragShader from './shader.frag.glsl?raw';
 import vertShader from './shader.vert.glsl?raw';
@@ -23,7 +22,7 @@ export default class ShaderContext extends Context {
         this.add(new THREE.Mesh(new THREE.TorusKnotGeometry(1,0.01), this.shaderMat));
     }
 
-    public override tick(delta: number): void {
+    public override tick(_delta: number): void {
         this.shaderMat.uniforms.time.value = this.engine.clock.elapsedTime;
     }
 
