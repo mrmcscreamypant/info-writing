@@ -2,13 +2,13 @@ import React from "react";
 import Page from "../core/Page";
 import YAMLParser from "../core/YAMLParser";
 
-import markup from './tools.yaml?raw';
+import doc from './tools.yaml?raw';
 import AppImage from "../widgets/AppImage";
 import XKCDCredit from "./XKCDCredit";
 
 export default function ToolsPage(): React.JSX.Element {
     return <Page>
-        <YAMLParser markup={markup} figs={{
+        <YAMLParser markup={doc} figs={{
             linux: <AppImage
                 src="https://imgs.xkcd.com/comics/cautionary.png"
                 credit={<XKCDCredit />}

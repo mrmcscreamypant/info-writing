@@ -2,7 +2,7 @@ import React from 'react';
 import Page from '../core/Page';
 import YAMLParser from '../core/YAMLParser';
 
-import document from './pro-con.yaml?raw';
+import doc from './pro-con.yaml?raw';
 import AppImage from '../widgets/AppImage';
 import CodeSample, { CodeLanguage } from '../widgets/CodeSample';
 
@@ -12,7 +12,7 @@ import Desmos, { DesmosType } from '../widgets/Desmos';
 
 export default function ProConPage(): React.JSX.Element {
     return <Page>
-        <YAMLParser markup={document} figs={{
+        <YAMLParser markup={doc} figs={{
             python: <AppImage
                 src="https://imgs.xkcd.com/comics/python.png"
                 credit={<XKCDCredit />}

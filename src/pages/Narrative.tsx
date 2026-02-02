@@ -6,14 +6,14 @@ import YAMLParser from '../core/YAMLParser';
 import CodeSample, { CodeLanguage } from '../widgets/CodeSample';
 import XKCDCredit from './XKCDCredit';
 
-import document from './narrative.yaml?raw';
+import doc from './narrative.yaml?raw';
 import spaghettiCodeSample from '../background/Engine?raw';
 import htmlCodeSample from '../../index.html?raw';
 import entrypointCodeSample from '../index?raw';
 
 export default function Narrative(): React.JSX.Element {
     return <Page>
-        <YAMLParser markup={document} figs={{
+        <YAMLParser markup={doc} figs={{
             spaghetti: <CodeSample content={spaghettiCodeSample} language={CodeLanguage.TS} file='Engine.ts' />,
             knowledge: <AppImage
                 src="https://imgs.xkcd.com/comics/average_familiarity.png"
@@ -38,7 +38,7 @@ export default function Narrative(): React.JSX.Element {
                 file='index.tsx'
             />,
             thisIsNotInceptionThisIsFractalAndNotEven: <CodeSample
-                content={document}
+                content={doc}
                 language={CodeLanguage.YAML}
                 file='narrative.yaml'
             />,
