@@ -2,7 +2,7 @@ import React from 'react';
 import './page.css';
 
 //import { ScrollRestoration } from 'react-router';
-import { Container } from '@radix-ui/themes';
+import { Box, Container } from '@radix-ui/themes';
 import { motion } from 'motion/react';
 import Paragraph from '../widgets/Paragraph';
 import AppLink, { AppLinkDirection } from '../widgets/AppLink';
@@ -15,6 +15,12 @@ function Footer({ hidden }: { hidden: boolean }): React.JSX.Element {
                 <AppLink to={AppRoute.INDEX} direction={AppLinkDirection.BACKWARD} text="Back to home" />
             </Paragraph>
         }
+    </div>;
+}
+
+function LoadingSpinner(): React.JSX.Element {
+    return <div className='loading-container'>
+        <div className='loading-text'>Loading...</div>
     </div>;
 }
 
@@ -31,7 +37,7 @@ export default function Page({ children, noFooter }: { noFooter?: boolean } & Re
                 </motion.div>
                 <Footer hidden={noFooter} />
             </Container> :
-            <>LOADING...</>
+            <LoadingSpinner />
         }
     </>;
 }

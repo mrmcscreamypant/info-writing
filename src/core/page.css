@@ -3,6 +3,8 @@
     margin-top: 50vh;
 
     min-height: 75vh;
+
+    animation: fade-in 1.0s;
 }
 
 .footer {
@@ -10,8 +12,33 @@
     height: 100vh;
 
     justify-content: center;
-    
+
     & * {
         margin: auto
+    }
+}
+
+.loading-container {
+    position: fixed;
+    display: flex;
+
+    top: 0px;
+    left: 0px;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.loading-text {
+    margin: auto;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opactiy: 1;
     }
 }
