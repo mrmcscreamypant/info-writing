@@ -13,7 +13,8 @@
         "strictNullChecks": false,
         "forceConsistentCasingInFileNames": true,
         "types": [
-            "vite/client"
+            "vite/client",
+            "desmos"
         ],
         "lib": [
             "ES2024",

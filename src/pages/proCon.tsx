@@ -8,7 +8,7 @@ import CodeSample, { CodeLanguage } from '../widgets/CodeSample';
 
 import verboseJavaSample from './codeSamples/HelloWorld.java?raw';
 import XKCDCredit from './XKCDCredit';
-import Desmos, { DesmosType } from '../widgets/Desmos';
+import DesmosSample, { DesmosType } from '../widgets/DesmosSample';
 
 export default function ProConPage(): React.JSX.Element {
     return <Page>
@@ -21,10 +21,10 @@ export default function ProConPage(): React.JSX.Element {
             />,
             python3: <CodeSample content='print("Hello, world!")' language={CodeLanguage.PY} file='helloWorld.py' />,
             verboseJava: <CodeSample content={verboseJavaSample} language={CodeLanguage.JAVA} file='App.java' />,
-            desmos: <Desmos type={DesmosType.GEOMETRY} slug="k5sggcr7rn" />,
-            cheating: <Desmos type={DesmosType.CALCULATOR} slug="nzvkdo6syz" embed />,
-            pong: <Desmos type={DesmosType.CALCULATOR} slug="htebducdvg" embed />,
-            dyson: <Desmos type={DesmosType.THREED} slug="byji8toyc9" />
+            desmos: <DesmosSample type={DesmosType.GEOMETRY} slug="k5sggcr7rn" />,
+            cheating: <DesmosSample type={DesmosType.CALCULATOR} slug="nzvkdo6syz" embed />,
+            pong: <DesmosSample type={DesmosType.CALCULATOR} slug="htebducdvg" embed />,
+            dyson: <DesmosSample type={DesmosType.THREED} slug="byji8toyc9" />
         }} />
     </Page>;
 }
