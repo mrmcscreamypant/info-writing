@@ -125,8 +125,7 @@
   defs:
     - term: recursion
       meaning: |
-        A function calling itself. Fun fact: if you Google "recursion",
-        it will say "did you mean 'recursion'?".
+        See: "recursion". When a function calls itself.
 
 - content: |
     A few of it's limitations include: you can't nest lists, lists
